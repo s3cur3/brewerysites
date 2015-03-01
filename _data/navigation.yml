@@ -1,6 +1,6 @@
 # Site navigation links
 
-- title:
-  url:
-  excerpt:
-  image:
+- title: Pricing
+  url: /pricing/
+  excerpt: "Things I’ve designed, illustrated, developed, coded, and whatever."
+  image: 300x200.gif
