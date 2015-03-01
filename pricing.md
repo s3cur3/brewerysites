@@ -1,5 +1,7 @@
 ---
-title: test
-layout: default
-permalink: /pricing/
+title: About Brewery Sites
+layout: archive
+permalink: /about/
 ---
+
+(Lorem ipsum)

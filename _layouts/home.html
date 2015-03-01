@@ -11,9 +11,8 @@ layout: default
 		</div>
 
         <div class="page-feature">
-			<div class="page-image">
-				<img src="http://placehold.it/1024x500&text=iPad+iPhone+Macbook" class="page-feature-image" alt="{{ page.title }}">
-				{% if page.image.credit %}{% include image-credit.html %}{% endif %}
+			<div class="page-image center">
+                <img src="{{ site.url }}/images/responsive-demo.jpg" class="page-feature-image" alt="{{ page.title }}" itemprop="image" width="800">
 			</div><!-- /.page-image -->
 		</div><!-- /.page-feature -->
 
@@ -66,7 +65,7 @@ layout: default
                 Designs to choose from
                 -----------------------------------------------------------------------------------------------------------------------------------
                 {% endcomment %}
-                <h2 class="section-break">Four designs to choose from&mdash;customized to your brewery&rsquo;s branding</h2>
+                <h2 class="section-break">Four designs to choose from&mdash;customized to your brewery</h2>
                 <div class="tiles">
                     <div class="tile">
                         <div title="{{ post.title }}" class="post-teaser"><img src="http://placehold.it/400x250"></div>
@@ -98,22 +97,22 @@ layout: default
                 <p>Here&rsquo;s how it works&hellip;</p>
 
                 <div class="row">
-                    <div class="span3 big-number">1</div>
-                    <div class="span9 last-of-row">
+                    <div class="span2 big-number">1</div>
+                    <div class="span10 last-of-row">
                         <p><a href="/pricing/">Sign up for a complete Web site package</a>.</p>
                         <p>There, we&rsquo;ll ask you to send along all the materials you have already&mdash;your old Web site, your beer list, any photos you have, and so on.</p>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="span3 big-number">2</div>
-                    <div class="span9 last-of-row">
+                    <div class="span2 big-number">2</div>
+                    <div class="span10 last-of-row">
                         <p>Our Web design team will get to work putting together your new site.</p>
                         <p>Unless we need more information from you, we&rsquo;ll send you a first-draft in under 7 days, giving you the chance to review the design and have changes made.</p>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="span3 big-number">3</div>
-                    <div class="span9 last-of-row">
+                    <div class="span2 big-number">3</div>
+                    <div class="span10 last-of-row">
                         <p>We&rsquo;ll make the completed site available to the world at your domain (for instance, yourbrewery.com). We&rsquo;ll also show you how you can easily make changes to the site in the future.</p>
                     </div>
                 </div>
@@ -126,23 +125,7 @@ layout: default
                 -----------------------------------------------------------------------------------------------------------------------------------
                 {% endcomment %}
                 <h2 class="section-break">Pricing & Plans</h2>
-                <div class="row three-quarters">
-                    <div class="pricing-column">
-                        {% include pricing-heading name="Pale Ale" price="49" %}
-                        {% include pricing-features.html %}
-                        <p class="buy-btn"><a href="/sign-up/pale-ale/" class="btn  full">Sign up now</a></p>
-                    </div>
-                    <div class="pricing-column">
-                        {% include pricing-heading name="IPA" price="99" %}
-                        {% include pricing-features.html extra1='Online merchandise sales' %}
-                        <p class="buy-btn"><a href="/sign-up/ipa/" class="btn full">Sign up now</a></p>
-                    </div>
-                    <div class="pricing-column">
-                        {% include pricing-heading name="Double IPA" price="199" %}
-                        {% include pricing-features.html extra1='Online merchandise sales' extra2='Done-for-you site changes' %}
-                        <p class="buy-btn"><a href="/sign-up/double-ipa/" class="btn full">Sign up now</a></p>
-                    </div>
-                </div>
+                {% include pricing-table.html %}
 
 				{{ content }}
 			</div><!-- /.page-content -->
