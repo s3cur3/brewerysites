@@ -1,12 +1,20 @@
 /** Utility classes **/
-.text-center {
-  text-align: center;
-}
 .hidden {
   display: none !important;
 }
 .clear {
   clear:both;
+}
+
+.section-break {
+  margin-top: 60px;
+}
+
+.full {
+  width: 100%;
+}
+.three-quarters {
+  width: 75%;
 }
 
 .ml0 { margin-left: 0 !important; }

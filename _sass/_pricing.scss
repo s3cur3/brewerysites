@@ -1,0 +1,46 @@
+.pricing-column {
+  @include span-columns(4);
+
+  .header {
+    background: #333;
+    color: #fff;
+    padding: 10px 10px 15px;
+    text-align: center;
+
+    h3, p {
+      margin: 0;
+    }
+    .price {
+      font-size: 2em;
+      color: lighten($primary-color, 15%);
+
+      .per-month {
+        font-size: 0.5em;
+        color: #fff;
+      }
+    }
+  }
+  ul.package-features {
+    list-style-type: none;
+    padding-left: 0;
+
+    li {
+      @include font-size(18, yes, 28);
+      margin-bottom: 1em;
+      margin-left: 22px;
+      text-indent: -11px;
+    }
+  }
+  .buy-btn {
+    text-align: center;
+  }
+}
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,17 @@
+<ul class="package-features">
+    <li><i class="fa fa-check success" aria-hidden="true"></i> World-class Web design, tailored to your brand</li>
+    <li><i class="fa fa-check success" aria-hidden="true"></i> Mobile-friendly design</li>
+    <li><i class="fa fa-check success" aria-hidden="true"></i> Support from the designer</li>
+    <li><i class="fa fa-check success" aria-hidden="true"></i> Rock-solid site hosting</li>
+    <li><i class="fa fa-check success" aria-hidden="true"></i> Edit your site at any time</li>
+    {% if include.extra1 %}
+        <li><i class="fa fa-check success" aria-hidden="true"></i> {{ include.extra1 }}</li>
+    {% else %}
+        <li>&nbsp;</li>
+    {% endif %}
+    {% if include.extra2 %}
+        <li><i class="fa fa-check success" aria-hidden="true"></i> {{ include.extra2 }}</li>
+    {% else %}
+        <li>&nbsp;</li>
+    {% endif %}
+</ul>

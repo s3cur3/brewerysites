@@ -22,6 +22,9 @@
 		@include transform(translateY(1px));
 	}
 }
+a.btn {
+  text-decoration: none !important;
+}
 .btn-inverse {
 	@extend .btn;
 	background-color: $white;

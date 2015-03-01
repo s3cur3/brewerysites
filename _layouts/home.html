@@ -24,9 +24,9 @@ layout: default
                     Feature Tiles
                 -----------------------------------------------------------------------------------------------------------------------------------
                 {% endcomment %}
-                <div class="tiles mt20">
+                <div class="tiles section-break">
                     <div class="tile">
-                        <div class="text-center"><i class="fa fa-refresh fa-spin fa-5x" aria-hidden="true"></i></div>
+                        <div class="center"><i class="fa fa-refresh fa-spin fa-5x" aria-hidden="true"></i></div>
                         <h2 class="post-title">Easy to make changes&mdash;or have us do it for you.</h2>
                         <div class="post-excerpt">
                             <p>Because our sites are powered by WordPress, the most popular site editing tool in the world, editing &amp; managing your site is a breeze.</p>
@@ -35,7 +35,7 @@ layout: default
                     </div><!-- /.tile -->
 
                     <div class="tile">
-                        <div class="text-center"><i class="fa fa-shopping-cart fa-5x" aria-hidden="true"></i></div>
+                        <div class="center"><i class="fa fa-shopping-cart fa-5x" aria-hidden="true"></i></div>
                         <h2 class="post-title">Simple online merchandise sales.</h2>
                         <div class="post-excerpt">
                             <p>Selling your merchandise through your Web site has never been easier. We handle all the complicated aspects of online ordering, so all you have to do is ship the orders.</p>
@@ -43,7 +43,7 @@ layout: default
                     </div><!-- /.tile -->
 
                     <div class="tile">
-                        <div class="text-center"><i class="fa fa-rocket fa-5x" aria-hidden="true"></i></div>
+                        <div class="center"><i class="fa fa-rocket fa-5x" aria-hidden="true"></i></div>
                         <h2 class="post-title">Rock-solid, lighting-fast hosting.</h2>
                         <div class="post-excerpt">
                             <p>You don&rsquo;t want would-be customers to give up on your site when it loads slow&mdash;or worse, not be able to find the site at all because it crashed!</p>
@@ -52,7 +52,7 @@ layout: default
                     </div><!-- /.tile -->
 
                     <div class="tile">
-                        <div class="text-center"><i class="fa fa-comments-o fa-5x" aria-hidden="true"></i></div>
+                        <div class="center"><i class="fa fa-comments-o fa-5x" aria-hidden="true"></i></div>
                         <h2 class="post-title">Support from real human beings.</h2>
                         <div class="post-excerpt">
                             <p>When you have a problem, you&rsquo;ll talk to a professional Web developer who&rsquo;s ready to help make your site everything you want it to be.</p>
@@ -66,8 +66,8 @@ layout: default
                 Designs to choose from
                 -----------------------------------------------------------------------------------------------------------------------------------
                 {% endcomment %}
-                <h2>Four designs to choose from&mdash;customized to your brewery&rsquo;s branding</h2>
-                <div class="tiles mt20">
+                <h2 class="section-break">Four designs to choose from&mdash;customized to your brewery&rsquo;s branding</h2>
+                <div class="tiles">
                     <div class="tile">
                         <div title="{{ post.title }}" class="post-teaser"><img src="http://placehold.it/400x250"></div>
                         <h2 class="post-title">Theme 1</h2>
@@ -94,10 +94,55 @@ layout: default
                 How It Works
                 -----------------------------------------------------------------------------------------------------------------------------------
                 {% endcomment %}
-                <h2>7 days to your new Web site</h2>
+                <h2 class="section-break">7 days to your new Web site</h2>
                 <p>Here&rsquo;s how it works&hellip;</p>
 
+                <div class="row">
+                    <div class="span3 big-number">1</div>
+                    <div class="span9 last-of-row">
+                        <p><a href="/pricing/">Sign up for a complete Web site package</a>.</p>
+                        <p>There, we&rsquo;ll ask you to send along all the materials you have already&mdash;your old Web site, your beer list, any photos you have, and so on.</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="span3 big-number">2</div>
+                    <div class="span9 last-of-row">
+                        <p>Our Web design team will get to work putting together your new site.</p>
+                        <p>Unless we need more information from you, we&rsquo;ll send you a first-draft in under 7 days, giving you the chance to review the design and have changes made.</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="span3 big-number">3</div>
+                    <div class="span9 last-of-row">
+                        <p>We&rsquo;ll make the completed site available to the world at your domain (for instance, yourbrewery.com). We&rsquo;ll also show you how you can easily make changes to the site in the future.</p>
+                    </div>
+                </div>
 
+
+
+                {% comment %}
+                -----------------------------------------------------------------------------------------------------------------------------------
+                Pricing
+                -----------------------------------------------------------------------------------------------------------------------------------
+                {% endcomment %}
+                <h2 class="section-break">Pricing & Plans</h2>
+                <div class="row three-quarters">
+                    <div class="pricing-column">
+                        {% include pricing-heading name="Pale Ale" price="49" %}
+                        {% include pricing-features.html %}
+                        <p class="buy-btn"><a href="/sign-up/pale-ale/" class="btn  full">Sign up now</a></p>
+                    </div>
+                    <div class="pricing-column">
+                        {% include pricing-heading name="IPA" price="99" %}
+                        {% include pricing-features.html extra1='Online merchandise sales' %}
+                        <p class="buy-btn"><a href="/sign-up/ipa/" class="btn full">Sign up now</a></p>
+                    </div>
+                    <div class="pricing-column">
+                        {% include pricing-heading name="Double IPA" price="199" %}
+                        {% include pricing-features.html extra1='Online merchandise sales' extra2='Done-for-you site changes' %}
+                        <p class="buy-btn"><a href="/sign-up/double-ipa/" class="btn full">Sign up now</a></p>
+                    </div>
+                </div>
 
 				{{ content }}
 			</div><!-- /.page-content -->
