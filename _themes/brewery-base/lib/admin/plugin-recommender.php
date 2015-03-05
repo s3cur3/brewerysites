@@ -83,6 +83,12 @@ function mlfRegisterRequiredPlugins() {
             'source'   => 'http://cisandbox.mystagingwebsite.com/wp-content/plugins/ci-slides-cpt.zip', // The plugin source.
             'required' => true, // If false, the plugin is only 'recommended' instead of required.
         ),
+        array(
+            'name'     => 'Beers Custom Post Type Plugin', // The plugin name.
+            'slug'     => 'ci-beers-cpt', // The plugin slug (typically the folder name).
+            'source'   => 'http://cisandbox.mystagingwebsite.com/wp-content/plugins/ci-beers-cpt.zip', // The plugin source.
+            'required' => true, // If false, the plugin is only 'recommended' instead of required.
+        ),
     );
 
     // Change this to your theme text domain, used for internationalising strings

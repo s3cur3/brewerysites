@@ -52,7 +52,7 @@ if( !function_exists('ciAddStaffImgSizeNote') ) {
         add_meta_box(
             'ci_image_size_note',
             '<strong>Note</strong>: Featured Image Sizes',
-            'ciPrintAttyImgSizeNote',
+            'ciPrintStaffImgSizeNote',
             CI_STAFF_TYPE,
             'side',
             'low'

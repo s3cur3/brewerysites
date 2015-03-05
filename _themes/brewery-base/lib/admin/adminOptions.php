@@ -214,6 +214,61 @@ function mlfRegisterMetaBoxes( $meta_boxes ) {
         ),
     );
 
+    // Meta box for the Beers custom post type
+    $meta_boxes[] = array(
+        // Meta box id, UNIQUE per meta box. Optional since 4.1.5
+        'id' => 'beer-stats',
+
+        // Meta box title - Will appear at the drag and drop handle bar. Required.
+        'title' => __( 'Beer Stats', CI_TEXT_DOMAIN ),
+
+        // Post types, accept custom post types as well - DEFAULT is array('post'). Optional.
+        'pages' => array( CI_BEER_TYPE ),
+
+        // Where the meta box appear: normal (default), advanced, side. Optional.
+        'context' => 'normal',
+
+        // Order of meta box: high (default), low. Optional.
+        'priority' => 'high',
+
+        // Auto save: true, false (default). Optional.
+        'autosave' => true,
+
+        // List of meta fields
+        'fields' => array(
+            array(
+                'name'  => __( 'Percent Alcohol', CI_TEXT_DOMAIN ),
+                'id'    => "{$prefix}abv",
+                'desc'  => __("(no % sign)"),
+                'type'  => 'text',
+                'std'   => '',
+                'clone' => false,
+            ),
+            array(
+                'name'  => __( 'IBU', CI_TEXT_DOMAIN ),
+                // Field ID, i.e. the meta key
+                'id'    => "{$prefix}ibu",
+                'type'  => 'text',
+                'std'   => '',
+                'clone' => false,
+            ),
+            array(
+                'name' => __('Availability', CI_TEXT_DOMAIN),
+                'id' => "{$prefix}availability",
+                'type' => 'select_advanced',
+                // Array of 'value' => 'Label' pairs for select box
+                'options' => array(
+                    'twelve' => __('12 oz. bottles', CI_TEXT_DOMAIN),
+                    'twentytwo' => __('22 oz. bottles', CI_TEXT_DOMAIN),
+                    'sevenfifty' => __('750 mL bottles', CI_TEXT_DOMAIN),
+                    'draft' => __('Draft', CI_TEXT_DOMAIN)
+                ),
+                // Select multiple values, optional. Default is false.
+                'multiple' => true,
+            ),
+        ),
+    );
+
     return $meta_boxes;
 }
 add_filter( 'rwmb_meta_boxes', 'mlfRegisterMetaBoxes' );

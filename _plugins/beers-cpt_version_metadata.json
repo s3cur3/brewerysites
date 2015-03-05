@@ -1,0 +1,10 @@
+{
+    "name" : "Beers Custom Post Type",
+    "slug" : "ci-beers-cpt",
+    "download_url" : "http://cisandbox.mystagingwebsite.com/wp-content/plugins/ci-beers-cpt.zip",
+    "version" : "1.02",
+    "author" : "Tyler Young",
+    "sections" : {
+        "description" : "Adds a 'Beers' post type for your theme to use."
+    }
+}

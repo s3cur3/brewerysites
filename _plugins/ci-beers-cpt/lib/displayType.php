@@ -2,23 +2,23 @@
 
 
 /**
- * @param $maxNumEmployees int Maximum number of employees to return
+ * @param $maxNumBeers int Maximum number of beers to return
  * @param $maxCharLength int The maximum length of the content, in characters
- * @return array All the employee data you need. Keys are 'content', 'title', 'url', 'imgURL', 'imgWidth', and 'imgHeight'
+ * @return array All the beer data you need. Keys are 'content', 'title', 'url', 'imgURL', 'imgWidth', and 'imgHeight'
  */
 if( !function_exists('ciGetAllBeers') ) {
-    function ciGetAllStaff( $maxNumEmployees = 100, $maxCharLength = -1 ) {
-        $query = new WP_Query('showposts=' . $maxNumEmployees . '&post_type=' . CI_STAFF_TYPE);
+    function ciGetAllBeers( $maxNumBeers = 100, $maxCharLength = -1 ) {
+        $query = new WP_Query('showposts=' . $maxNumBeers . '&post_type=' . CI_BEER_TYPE);
 
-        $employeeArray = array();
+        $beerArray = array();
         while( $query->have_posts() ) {
             $query->next_post();
 
-            $attachment = wp_get_attachment_image_src( get_post_thumbnail_id($query->post->ID), CI_STAFF_IMG );
+            $attachment = wp_get_attachment_image_src( get_post_thumbnail_id($query->post->ID), CI_BEER_IMG );
 
             $maybeExcerpt = has_excerpt($query->post->ID) ? $query->post->post_excerpt : $query->post->post_content;
 
-            $employeeArray[] = array(
+            $beerArray[] = array(
                 'id' => $query->post->ID,
                 'content' => ciFilterToMaxCharLength($maybeExcerpt, $maxCharLength),
                 'fullContent' => $query->post->post_content,
@@ -26,30 +26,29 @@ if( !function_exists('ciGetAllBeers') ) {
                 'imgURL' => ($attachment ? $attachment[0] : ''),
                 'imgWidth' => ($attachment ? $attachment[1] : -1),
                 'imgHeight' => ($attachment ? $attachment[2] : -1),
-                'url' => get_permalink($query->post->ID),
-                'socialURLs' => (function_exists('getStaffSocialURLs') ? getStaffSocialURLs($query->post->ID) : array())
+                'url' => get_permalink($query->post->ID)
             );
         }
 
         wp_reset_postdata();
-        return $employeeArray;
+        return $beerArray;
     }
 }
 
 
 /**
  * Returns the HTML to display an image+text slider
- * @param $employeesPerRow int Number of employees to print per row (in columns)
- * @param $numEmployees int The max number of employees to display.
- * @param $headingLevel int The "level" of heading to apply to the employee's name. E.g., 2 gives H2, 3 gives H3, etc.
- * @param $maxCharLength int The maximum length for each employee's content. If -1, there will be no limit.
+ * @param $beersPerRow int Number of beers to print per row (in columns)
+ * @param $numBeers int The max number of beers to display.
+ * @param $headingLevel int The "level" of heading to apply to the beer's name. E.g., 2 gives H2, 3 gives H3, etc.
+ * @param $maxCharLength int The maximum length for each beer's content. If -1, there will be no limit.
  * @param $listOnly boolean True if we should return a list of names only; false if we should show images + excerpt
  * @return string The HTML to be output
  */
-if( !function_exists('ciGetEmployeesHTML') ) {
-    function ciGetEmployeesHTML( $employeesPerRow = 1, $numEmployees = 100, $headingLevel = 3, $maxCharLength = -1, $listOnly = false ) {
-        function getEmployeeInnerHTML( $employee, $headingLevel, $floatImg="right", $listOnly) {
-            $imgClass = "employee-img";
+if( !function_exists('ciGetBeersHTML') ) {
+    function ciGetBeersHTML( $beersPerRow = 1, $numBeers = 100, $headingLevel = 3, $maxCharLength = -1, $listOnly = false ) {
+        function getBeerInnerHTML( $beer, $headingLevel, $floatImg="right", $listOnly) {
+            $imgClass = "beer-img";
             if( $floatImg == "right" ) {
                 $imgClass .= " alignright ml20";
             } else if( $floatImg == "left" ) {
@@ -57,48 +56,48 @@ if( !function_exists('ciGetEmployeesHTML') ) {
             }
 
             $out = "";
-            if( strlen ($employee['imgURL']) > 0 ) {
-                $out  .= "    <a href=\"{$employee['url']}\"><img alt=\"{$employee['title']}\" src=\"{$employee['imgURL']}\" width=\"{$employee['imgWidth']}\" height=\"{$employee['imgHeight']}\" class=\"{$imgClass}\" itemprop=\"image\"></a>\n";
+            if( strlen ($beer['imgURL']) > 0 ) {
+                $out  .= "    <a href=\"{$beer['url']}\"><img alt=\"{$beer['title']}\" src=\"{$beer['imgURL']}\" width=\"{$beer['imgWidth']}\" height=\"{$beer['imgHeight']}\" class=\"{$imgClass}\" itemprop=\"image\"></a>\n";
             }
 
-            $a = "<a href=\"{$employee['url']}\" itemprop=\"name\">{$employee['title']}</a>";
+            $a = "<a href=\"{$beer['url']}\" itemprop=\"name\">{$beer['title']}</a>";
             if( $listOnly ) {
                 return $a;
             }
 
             $out .= "    <h{$headingLevel}>{$a}</h{$headingLevel}>\n";
-            $out .= "    {$employee['content']}\n";
+            $out .= "    {$beer['content']}\n";
             $out .= "";
             return $out;
         }
 
 
-        $employees = ciGetAllBeers( $numEmployees, $maxCharLength );
+        $beers = ciGetAllBeers( $numBeers, $maxCharLength );
 
-        if( count($employees) == 0 ) {
+        if( count($beers) == 0 ) {
             return "";
         }
 
-        $divClass = "employees";
-        $liClass = "employee";
-        if( $employeesPerRow > 1 ) {
+        $divClass = "beers";
+        $liClass = "beer";
+        if( $beersPerRow > 1 ) {
             $divClass .= " row";
-            $colWidth = 12 / $employeesPerRow;
+            $colWidth = 12 / $beersPerRow;
             $liClass .= " col-sm-{$colWidth}";
         }
 
 
         $out = "<div class=\"{$divClass}\">";
-        if( count($employees) > 1 ) {
+        if( count($beers) > 1 ) {
             $out .= "<ul>\n";
-            for( $i = 0; $i < count($employees); $i++ ) {
+            for( $i = 0; $i < count($beers); $i++ ) {
                 $out .= "<li class=\"{$liClass}\" itemscope itemtype=\"http://schema.org/Person\">\n";
-                $out .= getBeerInnerHTML($employees[$i], $headingLevel, "none", $listOnly);
+                $out .= getBeerInnerHTML($beers[$i], $headingLevel, "none", $listOnly);
                 $out .= "</li>\n";
             }
             $out .= "</ul>\n";
         } else {
-            $out .= getBeerInnerHTML($employees[0], $headingLevel, "right", $listOnly);
+            $out .= getBeerInnerHTML($beers[0], $headingLevel, "right", $listOnly);
         }
         $out .= "</div>";
         return $out;
@@ -112,7 +111,7 @@ if( !function_exists('ciGetEmployeesHTML') ) {
  * @return string The HTML that will display a slider on page
  */
 if( !function_exists('ciBeerHTMLShortcode') ) {
-    function ciEmployeeHTMLShortcode($atts) {
+    function ciBeerHTMLShortcode($atts) {
         $columns = 1; // Defined for the sake of the IDE's error-checking
         $length = 250;
         $list = false;
@@ -129,12 +128,12 @@ if( !function_exists('ciBeerHTMLShortcode') ) {
 }
 
 if( !function_exists('ciRegisterBeerShortcode') ) {
-    function ciRegisterEmployeeShortcode() {
-        add_shortcode('employees', 'ciEmployeeHTMLShortcode');
+    function ciRegisterBeerShortcode() {
+        add_shortcode('beers', 'ciBeerHTMLShortcode');
     }
 }
 
-add_action( 'init', 'ciRegisterEmployeeShortcode');
+add_action( 'init', 'ciRegisterBeerShortcode');
 
 
 
