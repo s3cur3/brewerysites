@@ -131,17 +131,19 @@ add_filter( 'upload_mimes', 'ciAllowSVGUploads' );
  * @param int $overridePostID Force us to look up the meta for a post with a specific ID
  * @return mixed The stored meta value, or $valueIfNotSet
  */
-function mlfGetNormalizedMeta( $fieldID, $valueIfNotSet, $overridePostID=null ) {
-    if( function_exists('rwmb_meta') ) {
-        $field = rwmb_meta( CI_THEME_PREFIX . "_{$fieldID}", array(), $overridePostID );
-        if( $field === "" ) {
-            $field = $valueIfNotSet;
+if( !function_exists('ciGetNormalizedMeta') ) {
+    function ciGetNormalizedMeta($fieldID, $valueIfNotSet, $overridePostID = null)
+    {
+        if (function_exists('rwmb_meta')) {
+            $field = rwmb_meta(CI_THEME_PREFIX . "_{$fieldID}", array(), $overridePostID);
+            if ($field === "") {
+                $field = $valueIfNotSet;
+            }
+            return $field;
+        } else {
+            return $valueIfNotSet;
         }
-        return $field;
-    } else {
-        return $valueIfNotSet;
     }
-
 }
 
 

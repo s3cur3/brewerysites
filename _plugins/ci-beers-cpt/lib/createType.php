@@ -68,6 +68,7 @@ if(!class_exists('CiBeersType')) {
                 add_image_size( self::POST_IMG, 400, 400 );
                 add_image_size( self::POST_IMG_SM, 300, 300 );
             }
+            flush_rewrite_rules();
         }
 
         function addImgSizeNote() {

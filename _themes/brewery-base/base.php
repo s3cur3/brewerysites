@@ -1,6 +1,6 @@
 <?php
 
-$showSlider = mlfGetNormalizedMeta( 'top_img_slider', false );
+$showSlider = ciGetNormalizedMeta( 'top_img_slider', false );
 $additionalBodyClass = "";
 if( $showSlider ) {
     $additionalBodyClass = " has-top-slider";
@@ -33,7 +33,7 @@ if( current_theme_supports( 'bootstrap-top-navbar' ) ) {
 }
 
 if( $showSlider ) {
-    $sliderCat = mlfGetNormalizedMeta( 'top_img_slider_cat_string', '' );
+    $sliderCat = ciGetNormalizedMeta( 'top_img_slider_cat_string', '' );
     echo ciGetSliderHTML( $sliderCat, 10, true, CI_SIZE_LG );
 }
 

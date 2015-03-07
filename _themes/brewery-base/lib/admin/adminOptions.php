@@ -25,10 +25,10 @@ function mlfRegisterMetaBoxes( $meta_boxes ) {
         'id' => 'standard',
 
         // Meta box title - Will appear at the drag and drop handle bar. Required.
-        'title' => __( 'The Modern Law Firm theme options', CI_TEXT_DOMAIN ),
+        'title' => __( 'Page-specific options', CI_TEXT_DOMAIN ),
 
         // Post types, accept custom post types as well - DEFAULT is array('post'). Optional.
-        'pages' => array( 'post', 'page', 'modern-law-attorney', 'modern-law-practice' ),
+        'pages' => array( 'post', 'page', CI_BEER_TYPE ),
 
         // Where the meta box appear: normal (default), advanced, side. Optional.
         'context' => 'normal',
@@ -102,10 +102,10 @@ function mlfRegisterMetaBoxes( $meta_boxes ) {
     // Meta box for the attorneys custom post type
     $meta_boxes[] = array(
         // Meta box id, UNIQUE per meta box. Optional since 4.1.5
-        'id' => 'attorneys-only',
+        'id' => 'staff-only',
 
         // Meta box title - Will appear at the drag and drop handle bar. Required.
-        'title' => __( 'Individual attorney options', CI_TEXT_DOMAIN ),
+        'title' => __( 'Individual staff member options', CI_TEXT_DOMAIN ),
 
         // Post types, accept custom post types as well - DEFAULT is array('post'). Optional.
         'pages' => array( CI_STAFF_TYPE ),

@@ -28,7 +28,7 @@ class Roots_Sidebar {
       $this->display = false;
     }
 
-    $this->display = mlfGetNormalizedMeta('show_page_sidebar', $this->display);
+    $this->display = ciGetNormalizedMeta('show_page_sidebar', $this->display);
   }
 
   private function check_conditional_tag($conditional_tag) {

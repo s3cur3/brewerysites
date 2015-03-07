@@ -43,6 +43,7 @@ function ciCreateSlidePostType() {
         add_image_size( CI_SIZE_MD, 1170, 99999 );
         add_image_size( CI_SIZE_LG, 1920, 99999 );
     }
+    flush_rewrite_rules();
 }
 
 /**

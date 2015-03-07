@@ -1,5 +1,5 @@
 <?php
-$showTitle = mlfGetNormalizedMeta( 'show_page_title', true );
+$showTitle = ciGetNormalizedMeta( 'show_page_title', true );
 if( $showTitle ) { ?>
     <div class="page-header">
         <h1>

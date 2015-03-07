@@ -69,10 +69,10 @@ function getSocialLinks( $profilesOverride=array(), $additionalListClass="" ) {
  */
 function getStaffSocialURLs($postID=null) {
     $arr = array(
-        'facebook' => mlfGetNormalizedMeta('facebook', '', $postID),
-        'twitter' => mlfGetNormalizedMeta('twitter', '', $postID),
-        'google-plus' => mlfGetNormalizedMeta('google-plus', '', $postID),
-        'linkedin' => mlfGetNormalizedMeta('linkedin', '', $postID),
+        'facebook' => ciGetNormalizedMeta('facebook', '', $postID),
+        'twitter' => ciGetNormalizedMeta('twitter', '', $postID),
+        'google-plus' => ciGetNormalizedMeta('google-plus', '', $postID),
+        'linkedin' => ciGetNormalizedMeta('linkedin', '', $postID),
     );
 
     return $arr;
@@ -81,7 +81,7 @@ function getStaffSocialURLs($postID=null) {
 /**
  * @param $arrayOfSocialURLs
  */
-function attorneySocialURLsAreEmpty($arrayOfSocialURLs) {
+function staffSocialURLsAreEmpty($arrayOfSocialURLs) {
     $empty = true;
     if( is_array($arrayOfSocialURLs) && count($arrayOfSocialURLs) > 0 ) {
         foreach( $arrayOfSocialURLs as $key => $val ) {

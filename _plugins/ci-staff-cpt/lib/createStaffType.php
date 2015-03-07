@@ -2,7 +2,7 @@
 
 
 
-// Create the Attorneys custom post type
+// Create the Staff custom post type
 add_action('init', 'ciCreateStaffType');
 if( !function_exists('ciCreateStaffType') ) {
     function ciCreateStaffType() {
@@ -25,7 +25,7 @@ if( !function_exists('ciCreateStaffType') ) {
             'query_var' => true,
             'rewrite' => array('slug' => 'staff'),
             'capability_type' => 'post',
-            'has_archive' => false,
+            'has_archive' => true,
             'hierarchical' => false,
             'menu_position' => 50,
             'supports' => array(
@@ -42,6 +42,7 @@ if( !function_exists('ciCreateStaffType') ) {
             add_image_size( CI_STAFF_IMG, 400, 400 );
             add_image_size( CI_STAFF_IMG_SM, 300, 300 );
         }
+        flush_rewrite_rules();
     }
 }
 /**

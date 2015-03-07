@@ -1,6 +1,6 @@
 <?php
 
-$showSlider = mlfGetNormalizedMeta( 'top_img_slider', false );
+$showSlider = ciGetNormalizedMeta( 'top_img_slider', false );
 $additionalClass = "landing-page";
 if( $showSlider ) {
     $additionalClass .= " has-top-slider";
