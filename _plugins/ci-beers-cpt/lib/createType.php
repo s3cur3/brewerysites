@@ -48,9 +48,10 @@ if(!class_exists('CiBeersType')) {
                 'query_var' => true,
                 'rewrite' => array('slug' => self::SINGULAR_LC),
                 'capability_type' => 'post',
-                'has_archive' => false,
+                'has_archive' => true,
                 'hierarchical' => false,
                 'menu_position' => 50,
+                'show_in_nav_menus' => true,
                 'supports' => array(
                     'title',
                     'editor',

@@ -25,6 +25,7 @@ if( !function_exists('ciCreateStaffType') ) {
             'query_var' => true,
             'rewrite' => array('slug' => 'staff'),
             'capability_type' => 'post',
+            'show_in_nav_menus' => true,
             'has_archive' => true,
             'hierarchical' => false,
             'menu_position' => 50,

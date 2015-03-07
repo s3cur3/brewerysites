@@ -1,13 +1,13 @@
-<!-- STAFF MEMBER HEADER -->
+<!-- BEER HEADER -->
 <?php
 $showTitle = ciGetNormalizedMeta('show_page_title', true);
 if( $showTitle ) { ?>
-    <div class="page-header" itemscope itemtype="http://schema.org/Person">
+    <div class="page-header" itemscope itemtype="http://schema.org/IndividualProduct">
         <h1 itemprop="name"><?php
             echo roots_title();
 
             if (has_post_thumbnail()) {
-                the_post_thumbnail(CI_STAFF_IMG_SM, array( 'class'	=> "attachment-post-thumbnail alignright ml20 featured-img", 'itemprop' => 'image'));
+                the_post_thumbnail(CI_BEER_IMG_SM, array( 'class'	=> "attachment-post-thumbnail alignright ml20 featured-img", 'itemprop' => 'image'));
             }
             ?>
         </h1>

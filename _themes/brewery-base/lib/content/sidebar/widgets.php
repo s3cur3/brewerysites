@@ -94,7 +94,7 @@ if( !class_exists('Roots_Vcard_Widget') ) {
             if( $title ) {
                 echo $before_title, $title, $after_title;
             } ?>
-            <p class="vcard" itemscope itemtype="http://schema.org/Attorney">
+            <p class="vcard" itemscope itemtype="http://schema.org/Brewery">
                 <a class="fn org url" href="<?php echo home_url( '/' ); ?>"><span itemprop="name"><?php echo apply_filters( 'widget_text', get_bloginfo( 'name' ) ); ?></span></a><br>
                   <span class="adr" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
                     <span class="street-address" itemprop="streetAddress"><?php echo apply_filters( 'widget_text', $instance['street_address'] ); ?></span><br>

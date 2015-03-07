@@ -1,6 +1,6 @@
 <?php
 
-function mlfAddClassToFooterWidgets($params)
+function ciAddClassToFooterWidgets($params)
 {
     if( $params[0]["id"] === "sidebar-footer" ) {
         // col-sm-3 >> make this 1/4 width
@@ -12,4 +12,4 @@ function mlfAddClassToFooterWidgets($params)
     return $params;
 }
 
-add_filter('dynamic_sidebar_params', 'mlfAddClassToFooterWidgets');
+add_filter('dynamic_sidebar_params', 'ciAddClassToFooterWidgets');
