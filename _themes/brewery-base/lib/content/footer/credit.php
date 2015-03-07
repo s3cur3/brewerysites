@@ -9,43 +9,41 @@ function ciGetThemeCredit() {
     global $wp_query;
     $id = $wp_query->post->ID;
 
-    $root = "http://conversioninsights.net";
+    $root = "http://brewsites.net";
     $me = $root . "/tyler-young/";
     $designServices = $root . "/services/web-design/";
     $themes = $root . "/free-wordpress-themes-law-firms/";
-    $project = $themes;
+    $project = $root;
 
     $choices = array(
         /* Project-specific */
-        getLinkWithText($themes, "Free Wordpress Themes for Law Firms"),
-        getLinkWithText($project, "Site created by Conversion Insights"),
-        getLinkWithText($project, "Designed by Conversion Insights"),
+        getLinkWithText($themes, "WordPress Themes for Breweries"),
+        getLinkWithText($themes, "WordPress Themes for Craft Breweries"),
+        getLinkWithText($project, "Site created by BrewSites"),
+        getLinkWithText($project, "Web Site by BrewSites"),
+        getLinkWithText($project, "Brewery Sites designed by BrewSites"),
 
-        /* Law-firm specific */
-        getLinkWithText($root, "Web Marketing for Law Firms") . " by Conversion Insights",
-        getLinkWithText($root, "Law Firm Marketing Consultant"),
-        getLinkWithText($root, "Web Marketing for Law Firms"),
-        "Law firm marketing by " . getLinkWithText($root, "Conversion Insights"),
-        getLinkWithText($themes, "Law Firm Theme") . " by Conversion Insights",
-        getLinkWithText($themes, "Free WordPress themes for lawyers") . " by " . getLinkWithText($root, "Conversion Insights"),
-        getLinkWithText($themes, "Free WordPress themes for law firms") . " by " . getLinkWithText($root, "Conversion Insights"),
+        /* Brewery specific */
+        getLinkWithText($root, "Web Marketing for Breweries") . " by BrewSites",
+        getLinkWithText($root, "Web Design for Craft Breweries"),
+        "Web design by " . getLinkWithText($root, "BrewSites"),
+        getLinkWithText($themes, "Brewery WordPress Theme") . " by BrewSites",
+        getLinkWithText($themes, "WordPress themes for craft breweries") . " by " . getLinkWithText($root, "BrewSites"),
 
 
         /* Kansas City-specific *
         getLinkWithText($designServices, "Kansas City Web Design"), */
 
         /* Generic */
-        "WordPress theme created by " . getLinkWithText($me, "Tyler Young") . " of Conversion Insights",
-        "WordPress theme by " . getLinkWithText($root, "Conversion Insights"),
-        getLinkWithText($root, "Conversion Insights"),
-        getLinkWithText($root, "Web Marketing") . " by Conversion Insights",
-        "Web site created by " . getLinkWithText($me, "Tyler Young") . " of Conversion Insights",
-        "By " .getLinkWithText($root, "Conversion Insights"),
-        "Site created by " . getLinkWithText($root, "Conversion Insights"),
-        "Designed by " . getLinkWithText($root, "Conversion Insights"),
-        getLinkWithText($designServices, "Web Design") . " by Conversion Insights",
-        getLinkWithText($designServices, "Web Design by Conversion Insights"),
-        "Web design by " . getLinkWithText($me, "Tyler Young") . " of Conversion Insights",
+        "WordPress theme created by " . getLinkWithText($me, "Tyler Young") . " of BrewSites",
+        "Brewery WordPress theme by " . getLinkWithText($root, "BrewSites"),
+        getLinkWithText($root, "BrewSites"),
+        "Web site created by " . getLinkWithText($me, "Tyler Young") . " of BrewSites",
+        "Site by " .getLinkWithText($root, "BrewSites"),
+        "Site created by " . getLinkWithText($root, "BrewSites"),
+        "Designed by " . getLinkWithText($root, "BrewSites"),
+        getLinkWithText($designServices, "Brewery Web Design") . " by BrewSites",
+        getLinkWithText($designServices, "Web Design for Craft Breweries"),
     );
 
     return $choices[ $id % count($choices) ];
