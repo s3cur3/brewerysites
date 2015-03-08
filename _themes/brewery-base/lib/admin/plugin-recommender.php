@@ -5,7 +5,7 @@
 
 require_once dirname( __FILE__ ) . '/class-tgm-plugin-activation.php';
 
-add_action( 'tgmpa_register', 'mlfRegisterRequiredPlugins' );
+add_action( 'tgmpa_register', 'ciRegisterRequiredPlugins');
 
 /**
  * Register the required plugins for this theme.
@@ -16,7 +16,7 @@ add_action( 'tgmpa_register', 'mlfRegisterRequiredPlugins' );
  * This function is hooked into tgmpa_init, which is fired within the
  * TGM_Plugin_Activation class constructor.
  */
-function mlfRegisterRequiredPlugins() {
+function ciRegisterRequiredPlugins() {
 
     /**
      * Array of plugin arrays. Required keys are name and slug.
@@ -69,6 +69,11 @@ function mlfRegisterRequiredPlugins() {
         array(
             'name'     => 'Testimonials by Aihrus',
             'slug'     => 'testimonials-widget',
+            'required' => false,
+        ),
+        array(
+            'name'     => 'Age Verify',
+            'slug'     => 'age-verify',
             'required' => false,
         ),
         array(

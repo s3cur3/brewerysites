@@ -13,6 +13,7 @@ require_once 'lib/constants.php';
 require_once 'lib/utils.php';
 require_once 'lib/createType.php';
 require_once 'lib/displayType.php';
+require_once 'lib/addWidgets.php';
 
 $UpdateChecker =
     PucFactory::buildUpdateChecker(
