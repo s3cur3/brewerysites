@@ -11,8 +11,8 @@ function ciGetThemeCredit() {
 
     $root = "http://brewsites.net";
     $me = $root . "/tyler-young/";
-    $designServices = $root . "/services/web-design/";
-    $themes = $root . "/free-wordpress-themes-law-firms/";
+    $designServices = $root . "/web-design-for-breweries/";
+    $themes = $root . "/wordpress-themes-for-breweries/";
     $project = $root;
 
     $choices = array(

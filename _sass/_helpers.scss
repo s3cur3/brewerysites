@@ -46,13 +46,21 @@
   text-align: center;
 }
 
-.image-right {
+.image-right, .image-left {
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+.image-right {
   @include media($medium) {
     float: right;
     margin-left: $gutter;
+  }
+}
+.image-left {
+  @include media($medium) {
+    float: left;
+    margin-right: $gutter;
   }
 }
 

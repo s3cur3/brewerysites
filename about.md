@@ -1,7 +1,7 @@
 ---
-title: Plans & Pricing
+title: About Brewery Sites
 layout: archive
-permalink: /pricing/
+permalink: /about/
 ---
 
-{% include pricing-table.html %}
+(Lorem ipsum)
