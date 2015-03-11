@@ -232,6 +232,7 @@ function mlfPrintCustomColorStyling() {
     $h2OnSecondary = mlfGetNormalizedColor('heading_on_secondary_background');
     $btn = mlfGetNormalizedColor('button_color');
     $backgroundImg = of_get_option("full_screen_image_bg");
+    $backgroundImgAgeVerification = of_get_option("age_verification_image_bg");
     $backgroundPattern = of_get_option("pattern_bg");
 
 ?>
@@ -253,6 +254,16 @@ function mlfPrintCustomColorStyling() {
                 background-position: center center;<?php
             } ?>
         }
+
+        <?php if($backgroundImgAgeVerification) { ?>
+        #age-verification-overlay-wrap {
+            background: url(<?php echo $backgroundImgAgeVerification; ?>) no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+        <?php }?>
 
         .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus, .dropdown-menu>.active>a, .dropdown-menu>.active>a:hover, .dropdown-menu>.active>a:focus {
             background: <?php echo $splash; ?>;

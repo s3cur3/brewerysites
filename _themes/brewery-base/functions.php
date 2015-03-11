@@ -61,7 +61,7 @@ require_once locate_template('/lib/scripts.php');
 
 
 /**
- * Lawyer theme includes
+ * Theme includes
  */
 // Blog configuration
 require_once locate_template('/lib/content/blog.php');
@@ -73,15 +73,8 @@ require_once locate_template('/lib/appearance/colors.php');
 require_once locate_template('/lib/content/sidebar/social.php');
 // Print credits for the theme
 require_once locate_template('/lib/content/footer/credit.php');
-/* DEPRECATED: Post types are now created by plugins.
-// Custom post type framework
-require_once locate_template('/lib/content/cptFramework.php');
-// Create slides post type
-require_once locate_template('/lib/content/slider.php');
-// Create attorneys post type
-require_once locate_template('/lib/content/attorneys.php');
-// Create practice areas post type
-require_once locate_template('/lib/content/practiceAreas.php'); */
+// Print credits for the theme
+require_once locate_template('/lib/content/footer/age-verification.php');
 // Enables special features of the TinyMCE editor
 require_once locate_template('/lib/admin/editor.php');
 // Add custom meta boxes to the admin site

@@ -8,7 +8,7 @@
  * @param $meta_boxes void
  * @return array The filled meta boxes
  */
-function mlfRegisterMetaBoxes( $meta_boxes ) {
+function ciRegisterMetaBoxes( $meta_boxes ) {
     global $ciSidebars;
     reset($ciSidebars);
     /**
@@ -271,7 +271,7 @@ function mlfRegisterMetaBoxes( $meta_boxes ) {
 
     return $meta_boxes;
 }
-add_filter( 'rwmb_meta_boxes', 'mlfRegisterMetaBoxes' );
+add_filter( 'rwmb_meta_boxes', 'ciRegisterMetaBoxes');
 
 
 
