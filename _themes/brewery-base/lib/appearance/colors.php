@@ -104,8 +104,8 @@ function ciGetColorTheme() {
 
 
 // Register colorpickers
-add_action('customize_register', 'mlfCustomizeRegister');
-function mlfCustomizeRegister($wp_customize)
+add_action('customize_register', 'ciCustomizeRegister');
+function ciCustomizeRegister($wp_customize)
 {
     $defaultColors = ciGetColorTheme();
     $colors = array();
@@ -168,7 +168,7 @@ function mlfCustomizeRegister($wp_customize)
  *                   with negative colors darkening and positive colors lightening.
  * @return string The hex value of the darkened/lightened color, beginning with "#"
  */
-function mlfAdjustBrightness($hex, $steps) {
+function ciAdjustBrightness($hex, $steps) {
     $steps = max(-255, min(255, $steps));
 
     // Format the hex color string
@@ -197,14 +197,14 @@ function mlfAdjustBrightness($hex, $steps) {
 
 
 
-add_action( 'ci_styles', 'mlfPrintCustomColorStyling' );
-function mlfPrintCustomColorStyling() {
+add_action( 'ci_styles', 'ciPrintCustomColorStyling');
+function ciPrintCustomColorStyling() {
     /**
      * Gets the customized color for a particular use.
      * @param string $colorIdentifier The name of the color, as registered with the WordPress theme customizer
      * @return string The color, in the form "#xxxxxxx"
      */
-    function mlfGetNormalizedColor($colorIdentifier) {
+    function ciGetNormalizedColor($colorIdentifier) {
         $defaultColors = ciGetColorTheme();
         $clr = get_option($colorIdentifier);
         if( ($clr == "" || $clr == "#") && array_key_exists($colorIdentifier, $defaultColors) ) {
@@ -223,14 +223,14 @@ function mlfPrintCustomColorStyling() {
         return $clr;
     }
 
-    $splash = mlfGetNormalizedColor('splash_color');
-    $firm_name = mlfGetNormalizedColor('firm_name_color');
-    $background = mlfGetNormalizedColor('background_color');
-    $secondaryBG = mlfGetNormalizedColor('secondary_background_color');
-    $h1 = mlfGetNormalizedColor('page_title_color');
-    $h2 = mlfGetNormalizedColor('heading_color');
-    $h2OnSecondary = mlfGetNormalizedColor('heading_on_secondary_background');
-    $btn = mlfGetNormalizedColor('button_color');
+    $splash = ciGetNormalizedColor('splash_color');
+    $firm_name = ciGetNormalizedColor('firm_name_color');
+    $background = ciGetNormalizedColor('background_color');
+    $secondaryBG = ciGetNormalizedColor('secondary_background_color');
+    $h1 = ciGetNormalizedColor('page_title_color');
+    $h2 = ciGetNormalizedColor('heading_color');
+    $h2OnSecondary = ciGetNormalizedColor('heading_on_secondary_background');
+    $btn = ciGetNormalizedColor('button_color');
     $backgroundImg = of_get_option("full_screen_image_bg");
     $backgroundImgAgeVerification = of_get_option("age_verification_image_bg");
     $backgroundPattern = of_get_option("pattern_bg");
@@ -287,7 +287,7 @@ function mlfPrintCustomColorStyling() {
             color: <?php echo $splash; ?>;
         }
         a:hover, a:focus {
-            color: <?php echo mlfAdjustBrightness($splash, -30) ?>;
+            color: <?php echo ciAdjustBrightness($splash, -30) ?>;
         }
 
         .navbar-default .navbar-brand {
@@ -302,11 +302,11 @@ function mlfPrintCustomColorStyling() {
         .btn-primary, input[type="submit"], button[type="submit"] {
             color: #fff;
             background-color: <?php echo $btn; ?>;
-            border-color: <?php echo mlfAdjustBrightness($btn, -20) ?>; /* slightly darker */
+            border-color: <?php echo ciAdjustBrightness($btn, -20) ?>; /* slightly darker */
         }
         .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open .dropdown-toggle.btn-primary, input[type="submit"]:hover, button[type="submit"]:hover, input[type="submit"]:focus, button[type="submit"]:focus, form input[type="submit"]:hover, form input[type="submit"]:focus {
-            background-color: <?php echo mlfAdjustBrightness($btn, -18) ?>;
-            border-color: <?php echo mlfAdjustBrightness($btn, -35) ?>;
+            background-color: <?php echo ciAdjustBrightness($btn, -18) ?>;
+            border-color: <?php echo ciAdjustBrightness($btn, -35) ?>;
             color: #fff;
         }
 
@@ -326,9 +326,9 @@ function mlfPrintCustomColorStyling() {
 
 
 
-function mlfAddEditorStyles() {
+function ciAddEditorStyles() {
     add_editor_style( 'assets/css/editor-colors.php' );
 }
-add_action( 'init', 'mlfAddEditorStyles' );
+add_action( 'init', 'ciAddEditorStyles');
 
 

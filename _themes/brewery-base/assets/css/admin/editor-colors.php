@@ -34,17 +34,17 @@ a {
 }
 
 a:hover, a:focus {
-    color: <?php echo mlfAdjustBrightness($splash, -30) ?>;
+    color: <?php echo ciAdjustBrightness($splash, -30) ?>;
 }
 
 .btn-primary, input[type="submit"], button[type="submit"] {
     color: #fff;
     background-color: <?php echo $splash ?>;
-    border-color: <?php echo mlfAdjustBrightness($splash, -20) ?>; /* slightly darker */
+    border-color: <?php echo ciAdjustBrightness($splash, -20) ?>; /* slightly darker */
 }
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open .dropdown-toggle.btn-primary, input[type="submit"]:hover, button[type="submit"]:hover, input[type="submit"]:focus, button[type="submit"]:focus, form input[type="submit"]:hover, form input[type="submit"]:focus {
-    background-color: <?php echo mlfAdjustBrightness($splash, -18) ?>;
-    border-color: <?php echo mlfAdjustBrightness($splash, -35) ?>;
+    background-color: <?php echo ciAdjustBrightness($splash, -18) ?>;
+    border-color: <?php echo ciAdjustBrightness($splash, -35) ?>;
     color: #fff;
 }

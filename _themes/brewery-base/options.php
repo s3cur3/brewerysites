@@ -160,7 +160,7 @@ if( !function_exists('optionsframework_options') ) {
         $options[] = $fontOptions->getFontFamilySelect('title_font_family', "Bree+Serif");
         $options[] = $fontOptions->getFontFamilyVariants('title_font_variants');
         $options[] = $fontOptions->getWeightOption('title_font_weight', '400');
-        $options[] = $fontOptions->getFallbackOption('body_font_fallback', 'Georgia, Garamond, sans-serif');
+        $options[] = $fontOptions->getFallbackOption('title_font_fallback', 'Georgia, Garamond, sans-serif');
 
         $options[] = array(
             'desc' => __('<h3 style="margin-top:3em">Heading (a.k.a. H2, H3, and H4) font</h3>', CI_TEXT_DOMAIN),
@@ -180,21 +180,28 @@ if( !function_exists('optionsframework_options') ) {
             '700' => '1',
         );
         $options[] = array(
-            'desc' => __('<h3 style="margin-top:3em">Widget title font</h3>', CI_TEXT_DOMAIN),
-            'type' => 'info');
-        $options[] = $fontOptions->getFontFamilySelect('widget_title_font_family', "Open+Sans");
-        $options[] = $fontOptions->getFontFamilyVariants('widget_title_font_variants', $openSansDefaultVariants);
-        $options[] = $fontOptions->getWeightOption('widget_title_font_weight', '700');
-        $options[] = $fontOptions->getFallbackOption('body_font_fallback', '"Helvetica Neue", Helvetica, Arial, sans-serif');
-
-
-        $options[] = array(
             'desc' => __('<h3 style="margin-top:3em">Body font</h3>', CI_TEXT_DOMAIN),
             'type' => 'info');
         $options[] = $fontOptions->getFontFamilySelect('body_font_family', "Open+Sans");
         $options[] = $fontOptions->getFontFamilyVariants('body_font_variants', $openSansDefaultVariants);
         $options[] = $fontOptions->getWeightOption('body_font_weight', '400');
         $options[] = $fontOptions->getFallbackOption('body_font_fallback', '"Helvetica Neue", Helvetica, Arial, sans-serif');
+
+        $options[] = array(
+            'desc' => __('<h3 style="margin-top:3em">Widget title font</h3>', CI_TEXT_DOMAIN),
+            'type' => 'info');
+        $options[] = $fontOptions->getFontFamilySelect('widget_title_font_family', "Open+Sans");
+        $options[] = $fontOptions->getFontFamilyVariants('widget_title_font_variants', $openSansDefaultVariants);
+        $options[] = $fontOptions->getWeightOption('widget_title_font_weight', '700');
+        $options[] = $fontOptions->getFallbackOption('widget_title_font_fallback', '"Helvetica Neue", Helvetica, Arial, sans-serif');
+
+        $options[] = array(
+            'desc' => __('<h3 style="margin-top:3em">Menu font</h3>', CI_TEXT_DOMAIN),
+            'type' => 'info');
+        $options[] = $fontOptions->getFontFamilySelect('menu_font_family', "Open+Sans");
+        $options[] = $fontOptions->getFontFamilyVariants('menu_font_variants', $openSansDefaultVariants);
+        $options[] = $fontOptions->getWeightOption('menu_font_weight', '700');
+        $options[] = $fontOptions->getFallbackOption('menu_font_fallback', '"Helvetica Neue", Helvetica, Arial, sans-serif');
 
 
 

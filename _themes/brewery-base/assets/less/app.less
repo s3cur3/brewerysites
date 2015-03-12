@@ -311,6 +311,29 @@ div.beers {
     margin-top: 15px;
   }
 }
+.widget .beers {
+  img {
+    float: right;
+    width: 50%;
+    margin-left: 10px;
+  }
+  ul {
+    margin-left: 0;
+    text-indent: 0;
+  }
+  li.beer {
+    list-style-type: none;
+    clear: both;
+    &.img-after img {
+      margin-top: 0;
+    }
+    &:before {
+      content: '';
+      padding: 0;
+      display: none;
+    }
+  }
+}
 
 figure.alignright {
   margin-left: 12px;

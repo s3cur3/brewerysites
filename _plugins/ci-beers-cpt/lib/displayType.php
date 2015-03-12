@@ -42,12 +42,13 @@ if( !function_exists('ciGetAllBeers') ) {
  * @param $numBeers int The max number of beers to display.
  * @param $headingLevel int The "level" of heading to apply to the beer's name. E.g., 2 gives H2, 3 gives H3, etc.
  * @param $maxCharLength int The maximum length for each beer's content. If -1, there will be no limit.
- * @param $listOnly boolean True if we should return a list of names only; false if we should show images + excerpt
+ * @param $noDescription boolean True if we should return exclude the excerpt/description
+ * @param $showImages boolean True if we should include images in the output HTML
  * @return string The HTML to be output
  */
 if( !function_exists('ciGetBeersHTML') ) {
-    function ciGetBeersHTML( $beersPerRow = 1, $numBeers = 100, $headingLevel = 3, $maxCharLength = -1, $listOnly = false ) {
-        function getBeerInnerHTML( $beer, $headingLevel, $floatImg="right", $listOnly) {
+    function ciGetBeersHTML( $beersPerRow = 1, $numBeers = 100, $headingLevel = 3, $maxCharLength = -1, $noDescription = false, $showImages = true, $imageComesBeforeHeading = true) {
+        function getBeerInnerHTML( $beer, $headingLevel, $floatImg="right", $noDescription, $showImages, $imageComesBeforeHeading) {
             $imgClass = "beer-img";
             if( $floatImg == "right" ) {
                 $imgClass .= " alignright ml20";
@@ -55,20 +56,27 @@ if( !function_exists('ciGetBeersHTML') ) {
                 $imgClass .= " alignleft mr20";
             }
 
-            $out = "";
-            if( strlen ($beer['imgURL']) > 0 ) {
-                $out  .= "    <a href=\"{$beer['url']}\"><img alt=\"{$beer['title']}\" src=\"{$beer['imgURL']}\" width=\"{$beer['imgWidth']}\" height=\"{$beer['imgHeight']}\" class=\"{$imgClass}\" itemprop=\"image\"></a>\n";
+
+            $imgHTML = "";
+            if( $showImages && strlen($beer['imgURL']) > 0 ) {
+                $imgHTML  .= "    <a href=\"{$beer['url']}\"><img alt=\"{$beer['title']}\" src=\"{$beer['imgURL']}\" width=\"{$beer['imgWidth']}\" height=\"{$beer['imgHeight']}\" class=\"{$imgClass}\" itemprop=\"image\"></a>\n";
             }
 
-            $a = "<a href=\"{$beer['url']}\" itemprop=\"name\">{$beer['title']}</a>";
-            if( $listOnly ) {
-                return $a;
+            $name = "<a href=\"{$beer['url']}\" itemprop=\"name\">{$beer['title']}</a>";
+            if($noDescription && !$showImages) {
+                return $name;
+            } else if($noDescription && $imageComesBeforeHeading) {
+                return $imgHTML . $name;
+            } else if($noDescription && !$imageComesBeforeHeading) {
+                return $name . $imgHTML;
+            } else {
+                $out = ($imageComesBeforeHeading ? $imgHTML : "");
+                $out .= "    <h{$headingLevel}>{$name}</h{$headingLevel}>\n";
+                $out .= ($imageComesBeforeHeading ? "" : $imgHTML);
+                $out .= "    {$beer['content']}\n";
+                $out .= "";
+                return $out;
             }
-
-            $out .= "    <h{$headingLevel}>{$a}</h{$headingLevel}>\n";
-            $out .= "    {$beer['content']}\n";
-            $out .= "";
-            return $out;
         }
 
 
@@ -85,19 +93,21 @@ if( !function_exists('ciGetBeersHTML') ) {
             $colWidth = 12 / $beersPerRow;
             $liClass .= " col-sm-{$colWidth}";
         }
+        $liClass .= $showImages ? " has-img" : " no-img";
+        $liClass .= $imageComesBeforeHeading ? " img-before" : " img-after";
 
 
         $out = "<div class=\"{$divClass}\">";
         if( count($beers) > 1 ) {
             $out .= "<ul>\n";
             for( $i = 0; $i < count($beers); $i++ ) {
-                $out .= "<li class=\"{$liClass}\" itemscope itemtype=\"http://schema.org/Person\">\n";
-                $out .= getBeerInnerHTML($beers[$i], $headingLevel, "none", $listOnly);
+                $out .= "<li class=\"{$liClass}\" itemscope itemtype=\"http://schema.org/Product\">\n";
+                $out .= getBeerInnerHTML($beers[$i], $headingLevel, "none", $noDescription, $showImages, $imageComesBeforeHeading);
                 $out .= "</li>\n";
             }
             $out .= "</ul>\n";
         } else {
-            $out .= getBeerInnerHTML($beers[0], $headingLevel, "right", $listOnly);
+            $out .= getBeerInnerHTML($beers[0], $headingLevel, "right", $noDescription, $showImages, $imageComesBeforeHeading);
         }
         $out .= "</div>";
         return $out;

@@ -10,16 +10,19 @@ function ciPrintFontStyles() {
     $h2Family = getFontFamily('heading_font_family', "Bree Serif");
     $widgetTitleFamily = getFontFamily('widget_title_font_family', "Open Sans");
     $bodyFamily = getFontFamily('body_font_family', "Open Sans");
+    $menuFamily = getFontFamily('menu_font_family', "Open Sans");
 
     $h1Weight = of_get_option('title_font_weight', '400');
     $h2Weight = of_get_option('heading_font_weight', '400');
     $widgetTitleWeight = of_get_option('widget_title_font_weight', '700');
     $bodyWeight = of_get_option('body_font_weight', '400');
+    $menuWeight = of_get_option('menu_font_weight', '700');
 
     $h1Fallback = of_get_option('title_font_fallback', 'Georgia, Garamond, sans-serif');
     $h2Fallback = of_get_option('heading_font_fallback', 'Georgia, Garamond, sans-serif');
     $widgetTitleFallback = of_get_option('widget_title_font_fallback', '"Helvetica Neue", Helvetica, Arial, sans-serif');
-    $bodyFallback = of_get_option('body_font_fallback', '"Helvetica Neue", Helvetica, Arial, sans-serif'); ?>
+    $bodyFallback = of_get_option('body_font_fallback', '"Helvetica Neue", Helvetica, Arial, sans-serif');
+    $menuFallback = of_get_option('menu_font_fallback', '"Helvetica Neue", Helvetica, Arial, sans-serif'); ?>
     <!-- Font styles -->
     <style>
         body, html, div {
@@ -39,6 +42,10 @@ function ciPrintFontStyles() {
         .widget h3 {
             font-family: "<?php echo $widgetTitleFamily; ?>", <?php echo $widgetTitleFallback; ?>;
             font-weight: <?php echo $widgetTitleWeight; ?>;
+        }
+        .nav {
+            font-family: "<?php echo $menuFamily; ?>", <?php echo $menuFallback; ?>;
+            font-weight: <?php echo $menuWeight; ?>;
         }
     </style>
 <?php

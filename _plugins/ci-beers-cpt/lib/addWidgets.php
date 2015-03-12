@@ -27,10 +27,15 @@ if(!class_exists('CiBeersWidget')) {
         {
             $title = apply_filters('widget_title', $instance['title']);
 
+            $showDesc = $instance['show_desc'] ? true : false;
+            $showImg = $instance['show_img'] ? true : false;
+            $max = $instance['num_posts'] ? $instance['num_posts'] : 100;
+            $descLength = $instance['desc_length'] ? $instance['desc_length'] : 120;
+
             echo $args['before_widget'];
             if (!empty($title))
                 echo $args['before_title'] . $title . $args['after_title'];
-            echo ciGetBeersHTML();
+            echo ciGetBeersHTML(1, $max, 3, $descLength, !$showDesc, $showImg, false);
             echo $args['after_widget'];
         }
 
@@ -53,6 +58,21 @@ if(!class_exists('CiBeersWidget')) {
             } else {
                 $numPosts = '5';
             }
+            if (isset($instance['desc_length'])) {
+                $descLength = $instance['desc_length'];
+            } else {
+                $descLength = '120';
+            }
+            if (isset($instance['show_desc'])) {
+                $showDesc = $instance['show_desc'];
+            } else {
+                $showDesc = false;
+            }
+            if (isset($instance['show_img'])) {
+                $showImg = $instance['show_img'];
+            } else {
+                $showImg = false;
+            }
             ?>
                 <p>
                     <label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:', CI_TEXT_DOMAIN); ?></label>
@@ -65,6 +85,20 @@ if(!class_exists('CiBeersWidget')) {
                     <input class="widefat" id="<?php echo $this->get_field_id('num_posts'); ?>"
                            name="<?php echo $this->get_field_name('num_posts'); ?>" type="text"
                            value="<?php echo esc_attr($numPosts); ?>">
+                </p>
+                <p>
+                    <label for="<?php echo $this->get_field_id('show_desc'); ?>"><?php _e('Show Beer Descriptions?', CI_TEXT_DOMAIN); ?></label>
+                    <input class="checkbox" type="checkbox" id="<?php echo $this->get_field_id('show_desc'); ?>" name="<?php echo $this->get_field_name('show_desc'); ?>" <?php echo $showDesc ? 'checked="true"' : ''; ?>">
+                </p>
+                <p>
+                    <label for="<?php echo $this->get_field_id('desc_length'); ?>"><?php _e('Max Description Length (characters):', CI_TEXT_DOMAIN); ?></label>
+                    <input class="widefat" id="<?php echo $this->get_field_id('desc_length'); ?>"
+                           name="<?php echo $this->get_field_name('desc_length'); ?>" type="number"
+                           value="<?php echo esc_attr($descLength); ?>">
+                </p>
+                <p>
+                    <label for="<?php echo $this->get_field_id('show_img'); ?>"><?php _e('Show Beer Images?', CI_TEXT_DOMAIN); ?></label>
+                    <input class="checkbox" type="checkbox" id="<?php echo $this->get_field_id('show_img'); ?>" name="<?php echo $this->get_field_name('show_img'); ?>" <?php echo $showImg ? 'checked="true"' : ''; ?>">
                 </p>
             <?php
         }
@@ -84,6 +118,9 @@ if(!class_exists('CiBeersWidget')) {
             $instance = array();
             $instance['title'] = (!empty($new_instance['title'])) ? strip_tags($new_instance['title']) : '';
             $instance['num_posts'] = (!empty($new_instance['num_posts'])) ? strip_tags($new_instance['num_posts']) : '';
+            $instance['desc_length'] = (!empty($new_instance['desc_length'])) ? strip_tags($new_instance['desc_length']) : '';
+            $instance['show_desc'] = (!empty($new_instance['show_desc'])) ? strip_tags($new_instance['show_desc']) : '';
+            $instance['show_img'] = (!empty($new_instance['show_img'])) ? strip_tags($new_instance['show_img']) : '';
 
             return $instance;
         }

@@ -150,7 +150,7 @@
     $(document).ready(function () {
         if( window.location.href.contains('page=options-framework') ) {
             var prefix = "the_modern_law_firm-";
-            var fontLocations = ['title', 'heading', 'widget_title', 'body'];
+            var fontLocations = ['title', 'heading', 'widget_title', 'menu', 'body'];
             var variants = [
                 '100', '100italic',
                 '200', '200italic',
