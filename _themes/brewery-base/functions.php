@@ -139,6 +139,21 @@ if( !function_exists('ciGetNormalizedMeta') ) {
     }
 }
 
+if( !function_exists('ciGetNormalizedMetaMultiple') ) {
+    function ciGetNormalizedMetaMultiple($fieldID, $valueIfNotSet, $overridePostID = null)
+    {
+        if (function_exists('rwmb_meta')) {
+            $field = rwmb_meta(CI_THEME_PREFIX . "_{$fieldID}", array('multiple' => true), $overridePostID);
+            if ($field === "") {
+                $field = $valueIfNotSet;
+            }
+            return $field;
+        } else {
+            return $valueIfNotSet;
+        }
+    }
+}
+
 
 // Disable extra columns for Yoast SEO plugin
 add_filter( 'wpseo_use_page_analysis', '__return_false' );

@@ -265,6 +265,30 @@ function ciRegisterMetaBoxes( $meta_boxes ) {
                 'clone' => false,
             ),
             array(
+                'name'  => __( 'Original Gravity (degrees Plato)', CI_TEXT_DOMAIN ),
+                // Field ID, i.e. the meta key
+                'id'    => "{$prefix}og",
+                'type'  => 'text',
+                'std'   => '',
+                'clone' => false,
+            ),
+            array(
+                'name'  => __( 'Color (degrees SRM)', CI_TEXT_DOMAIN ),
+                // Field ID, i.e. the meta key
+                'id'    => "{$prefix}srm",
+                'type'  => 'text',
+                'std'   => '',
+                'clone' => false,
+            ),
+            array(
+                'name'  => __( 'Seasonal Availability', CI_TEXT_DOMAIN ),
+                // Field ID, i.e. the meta key
+                'id'    => "{$prefix}seasonal_availability",
+                'type'  => 'text',
+                'std'   => '',
+                'clone' => false,
+            ),
+            array(
                 'name' => __('Availability', CI_TEXT_DOMAIN),
                 'id' => "{$prefix}availability",
                 'type' => 'select_advanced',
@@ -273,7 +297,8 @@ function ciRegisterMetaBoxes( $meta_boxes ) {
                     'twelve' => __('12 oz. bottles', CI_TEXT_DOMAIN),
                     'twentytwo' => __('22 oz. bottles', CI_TEXT_DOMAIN),
                     'sevenfifty' => __('750 mL bottles', CI_TEXT_DOMAIN),
-                    'draft' => __('Draft', CI_TEXT_DOMAIN)
+                    'draft' => __('Draft', CI_TEXT_DOMAIN),
+                    'nitro' => __('Nitro Draft', CI_TEXT_DOMAIN)
                 ),
                 // Select multiple values, optional. Default is false.
                 'multiple' => true,
