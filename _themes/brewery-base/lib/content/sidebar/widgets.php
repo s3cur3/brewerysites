@@ -42,6 +42,7 @@ if( !class_exists('Roots_Vcard_Widget') ) {
     class Roots_Vcard_Widget extends WP_Widget {
         private $fields = array(
             'title'          => 'Title (optional)',
+            'hours'          => 'Open Hours',
             'street_address' => 'Street Address',
             'locality'       => 'City/Locality',
             'region'         => 'State/Region',
@@ -53,7 +54,7 @@ if( !class_exists('Roots_Vcard_Widget') ) {
         function __construct() {
             $widget_ops = array( 'classname' => 'widget_roots_vcard', 'description' => __( 'Use this widget to add a vCard', CI_TEXT_DOMAIN ) );
 
-            $this->WP_Widget( 'widget_roots_vcard', __( 'Roots: vCard', CI_TEXT_DOMAIN ), $widget_ops );
+            $this->WP_Widget( 'widget_roots_vcard', __( 'Contact Information (vCard)', CI_TEXT_DOMAIN ), $widget_ops );
             $this->alt_option_name = 'widget_roots_vcard';
 
             add_action( 'save_post', array( &$this, 'flush_widget_cache' ) );
@@ -96,6 +97,9 @@ if( !class_exists('Roots_Vcard_Widget') ) {
             } ?>
             <p class="vcard" itemscope itemtype="http://schema.org/Brewery">
                 <a class="fn org url" href="<?php echo home_url( '/' ); ?>"><span itemprop="name"><?php echo apply_filters( 'widget_text', get_bloginfo( 'name' ) ); ?></span></a><br>
+                <?php if($instance['hours']) { ?>
+                    <span>Open <?php echo apply_filters( 'widget_text', $instance['hours'] ); ?></span><br>
+                <?php } ?>
                   <span class="adr" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
                     <span class="street-address" itemprop="streetAddress"><?php echo apply_filters( 'widget_text', $instance['street_address'] ); ?></span><br>
                     <span class="locality" itemprop="addressLocality"><?php echo apply_filters( 'widget_text', $instance['locality'] ); ?></span>,

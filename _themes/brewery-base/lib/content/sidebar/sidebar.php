@@ -30,7 +30,7 @@ class Roots_Sidebar {
 
         $this->display = ciGetNormalizedMeta('show_page_sidebar', $this->display);
         if(is_post_type_archive(CI_BEER_TYPE)) {
-            $this->display = of_get_option('show_sidebar_on_beer_archive', false);
+            $this->display = get_option('show_sidebar_on_beer_archive', false);
         }
     }
 

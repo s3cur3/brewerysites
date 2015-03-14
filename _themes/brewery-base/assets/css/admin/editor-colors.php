@@ -7,7 +7,7 @@ $splash = get_option('splash_color');
 $firm_name = get_option('firm_name_color');
 $background = get_option('background_color');
 $secondaryBG = get_option('secondary_background_color');
-$backgroundImg = of_get_option("full_screen_image_bg");
+$backgroundImg = get_option("full_screen_image_bg");
 $backgroundPattern = of_get_option("pattern_bg");
 //$_color = get_option('_color');
 
@@ -23,7 +23,7 @@ if( $background[0] !== "#" ) $background = "#" . $background;
 if( $secondaryBG[0] !== "#" ) $secondaryBG = "#" . $secondaryBG;
 
 ?>
-/* From colors.php */
+/* From editor-colors.php */
 a {
     color: <?php echo $splash; ?>;
 }

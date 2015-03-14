@@ -89,7 +89,7 @@ if( !function_exists('ciGetBeersHTML') ) {
         $containerClass = "beers";
         $itemClass = "beer";
         if( $beersPerRow > 1 ) {
-            $containerClass .= " row";
+            $containerClass .= " row per-row-{$beersPerRow}";
             $colWidth = 12 / $beersPerRow;
             $itemClass .= " col-sm-{$colWidth}";
         }
@@ -127,7 +127,7 @@ if( !function_exists('ciGetBeersHTML') ) {
 
 
 /**
- * Wrapper for the getSliderHTML() function, to be used by the Wordpress Shortcode API
+ * Wrapper for the ciGetBeersHTML() function, to be used by the Wordpress Shortcode API
  * @param $atts array containing optional 'category' field.
  * @return string The HTML that will display a slider on page
  */

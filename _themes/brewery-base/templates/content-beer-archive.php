@@ -1,7 +1,7 @@
 <!-- content-beer-archive -->
 <?php
 $beersPerRow = 4;
-if(of_get_option('show_sidebar_on_beer_archive', true)) {
+if(get_option('show_sidebar_on_beer_archive')) {
     $beersPerRow = 2;
 }
 

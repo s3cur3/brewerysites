@@ -28,6 +28,24 @@ if( !function_exists('optionsframework_options') ) {
         $patternPath = get_template_directory_uri() . '/assets/img/patterns/';
         $colorPath = get_template_directory_uri() . '/assets/img/colors/';
 
+        $subtlePatterns = array(
+            'none' => $patternPath . 'none.png',
+            'dark_wood' => $patternPath . 'dark_wood.png',
+            'tileable_wood_texture' => $patternPath . 'tileable_wood_texture.png',
+            'wood_1' => $patternPath . 'wood_1.png',
+            'wood_pattern' => $patternPath . 'wood_pattern.png',
+            'brushed_@2X' => $patternPath . 'brushed_@2X.png',
+            'grey_wash_wall' => $patternPath . 'grey_wash_wall.jpg',
+            'light_grey' => $patternPath . 'light_grey.png',
+            'nice_snow' => $patternPath . 'nice_snow.png',
+            'ricepaper_v3' => $patternPath . 'ricepaper_v3.png',
+            'sandpaper' => $patternPath . 'sandpaper.png',
+            'sos' => $patternPath . 'sos.png',
+            'stardust_@2X' => $patternPath . 'stardust_@2X.png',
+            'ticks_@2X' => $patternPath . 'ticks_@2X.png',
+            'tweed_@2X' => $patternPath . 'tweed_@2X.png',
+            'witewall_3_@2X' => $patternPath . 'witewall_3_@2X.png');
+
         $options = array();
 
 
@@ -37,44 +55,6 @@ if( !function_exists('optionsframework_options') ) {
         $options[] = array(
             'name' => __('Basics', CI_TEXT_DOMAIN),
             'type' => 'heading');
-        $options[] = array(
-            'name' => __("Theme Style", CI_TEXT_DOMAIN),
-            'desc' => __("Select one of a number of site-wide visual styles", CI_TEXT_DOMAIN),
-            'id' => "style",
-            'std' => "clean",
-            'type' => "select",
-            'class' => 'mini',
-            'options' => array(
-                CI_STYLE_CLEAN => __("Clean", CI_TEXT_DOMAIN),
-                CI_STYLE_GRUNGY => __("Grunge", CI_TEXT_DOMAIN)
-            )
-        );
-        $options[] = array(
-            'name' => __('', CI_TEXT_DOMAIN),
-            'desc' => __('<h3>Footer options</h3>', CI_TEXT_DOMAIN),
-            'type' => 'info');
-        $options[] = array(
-            'name' => __('Footer columns', CI_TEXT_DOMAIN),
-            'desc' => __('Each widget in the footer "sidebar" will be treated as its own column.', CI_TEXT_DOMAIN),
-            'id' => 'footer_columns',
-            'std' => '4',
-            'class' => 'mini',
-            'type' => 'text');
-        $options[] = array(
-            'name' => __('', CI_TEXT_DOMAIN),
-            'desc' => __('<h3>Age Verification</h3>', CI_TEXT_DOMAIN),
-            'type' => 'info');
-        $options[] = array(
-            'name' => __('Require users to be 21?', CI_TEXT_DOMAIN),
-            'desc' => __('If checked, we\'ll require the user to confirm their date of birth before showing any content.', CI_TEXT_DOMAIN),
-            'id' => 'age_verification',
-            'std' => '1',
-            'type' => 'checkbox');
-        $options[] = array(
-            'name' => __('Background image for age verification', CI_TEXT_DOMAIN),
-            'desc' => __('To use a large image as the background on the age verification overlay (instead of a flat, solid color), upload an image here.<br /> Recommended size: 1600x1024 or larger.', CI_TEXT_DOMAIN),
-            'id' => 'age_verification_image_bg',
-            'type' => 'upload');
         $options[] = array(
             'name' => __('', CI_TEXT_DOMAIN),
             'desc' => __('<h3>Google Analytics options</h3>', CI_TEXT_DOMAIN),
@@ -99,34 +79,6 @@ if( !function_exists('optionsframework_options') ) {
         $options[] = array(
             'name' => __('Header', CI_TEXT_DOMAIN),
             'type' => 'heading');
-
-        $options[] = array(
-            'name' => __('Firm Logo', CI_TEXT_DOMAIN),
-            'desc' => __('By default, we use the <a href="./options-general.php">site title</a> as the "logo." To use an image instead, set it here.<br /> Recommended size: 300x37.', CI_TEXT_DOMAIN),
-            'id' => 'firm_logo',
-            'type' => 'upload');
-
-
-        $options[] = array(
-            'name' => __('SVG version of logo', CI_TEXT_DOMAIN),
-            'desc' => __('If you choose to use an SVG version of the logo, the bitmap (above) will be used as a fallback.', CI_TEXT_DOMAIN),
-            'id' => 'svg_logo',
-            'type' => 'upload');
-        $options[] = array(
-            'name' => __('Width to display SVG', CI_TEXT_DOMAIN),
-            'desc' => __('(in pixels)&mdash;should be the same as the bitmap version\'s width', CI_TEXT_DOMAIN),
-            'id' => 'svg_logo_width',
-            'std' => '',
-            'class' => 'mini',
-            'type' => 'text');
-        $options[] = array(
-            'name' => __('Height to display SVG', CI_TEXT_DOMAIN),
-            'desc' => __('(in pixels)&mdash;should be the same as the bitmap version\'s height', CI_TEXT_DOMAIN),
-            'id' => 'svg_logo_height',
-            'std' => '',
-            'class' => 'mini',
-            'type' => 'text');
-
         $options[] = array(
             'name' => __('Additional "menu" text', CI_TEXT_DOMAIN),
             'desc' => __('This will appear to the far right of the navigation menu. Example: Call us at (123) 456-7890', CI_TEXT_DOMAIN),
@@ -135,18 +87,13 @@ if( !function_exists('optionsframework_options') ) {
             'type' => 'textarea');
 
         $options[] = array(
-            'name' => __('Fix navigation bar to the top of the screen?', CI_TEXT_DOMAIN),
-            'desc' => __('If checked, the navigation will follow the user down the page.', CI_TEXT_DOMAIN),
-            'id' => 'navbar_fixed',
-            'std' => '0',
-            'type' => 'checkbox');
-
-        $options[] = array(
-            'name' => __('Show social media icons to the right of the nav bar?', CI_TEXT_DOMAIN),
-            'desc' => 'If checked, we\'ll display the social media links that you set up in the Social tab above',
-            'id' => 'social_in_nav',
-            'std' => '0',
-            'type' => 'checkbox');
+            'name' => "Menu background pattern",
+            'desc' => "To use a subtle pattern (from subtlepatterns.com) as the background to the pages (instead of a flat, solid color or an image), select a pattern here.",
+            'id' => "menu_pattern_bg",
+            'std' => "none",
+            'type' => "images",
+            'options' => $subtlePatterns
+        );
 
 
         /**************************************************************
@@ -226,24 +173,10 @@ if( !function_exists('optionsframework_options') ) {
 
         $options[] = array(
             'name' => __('', CI_TEXT_DOMAIN),
-            'desc' => __('<strong>NOTE</strong>: Basic appearance settings, including the colors used by the theme,' .
+            'desc' => __('<strong>NOTE</strong>: Most appearance settings, including the colors used by the theme,' .
                          ' can be set using the Wordpress "<a href="./customize.php">Customize</a>" tool.<br />' .
                          '<a class="btn btn-primary mt10" href="./customize.php" style="text-decoration:none">Take me to the basic appearance options</a>', CI_TEXT_DOMAIN),
             'type' => 'info');
-
-        $options[] = array(
-            'name' => __('Make pages full-width?', CI_TEXT_DOMAIN),
-            'desc' => __('If checked, we will make pages the full width of the browser window, instead of being inside a "page" container.', CI_TEXT_DOMAIN),
-            'id' => 'full_width_container',
-            'std' => '0',
-            'type' => 'checkbox');
-
-        $options[] = array(
-            'name' => __('Show sidebar on "All Beers" page?', CI_TEXT_DOMAIN),
-            'desc' => __('If checked, we\'ll display the beers in two columns with your default sidebar.', CI_TEXT_DOMAIN),
-            'id' => 'show_sidebar_on_beer_archive',
-            'std' => '0',
-            'type' => 'checkbox');
 
         $options[] = array(
             'name' => "Color theme",
@@ -265,33 +198,15 @@ if( !function_exists('optionsframework_options') ) {
             )
         );
 
-
         $options[] = array(
-            'name' => __('Full-screen background image', CI_TEXT_DOMAIN),
-            'desc' => __('To use a large image as the background to the pages (instead of a flat, solid color), upload an image here.<br /> Recommended size: 1600x1024 or larger.', CI_TEXT_DOMAIN),
-            'id' => 'full_screen_image_bg',
-            'type' => 'upload');
-
-        $options[] = array(
-            'name' => "Background pattern",
+            'name' => "Body background pattern",
             'desc' => "To use a subtle pattern (from subtlepatterns.com) as the background to the pages (instead of a flat, solid color or an image), select a pattern here.",
             'id' => "pattern_bg",
             'std' => "none",
             'type' => "images",
-            'options' => array(
-                'none' => $patternPath . 'none.png',
-                'brushed_@2X' => $patternPath . 'brushed_@2X.png',
-                'grey_wash_wall' => $patternPath . 'grey_wash_wall.jpg',
-                'light_grey' => $patternPath . 'light_grey.png',
-                'nice_snow' => $patternPath . 'nice_snow.png',
-                'ricepaper_v3' => $patternPath . 'ricepaper_v3.png',
-                'sandpaper' => $patternPath . 'sandpaper.png',
-                'sos' => $patternPath . 'sos.png',
-                'stardust_@2X' => $patternPath . 'stardust_@2X.png',
-                'ticks_@2X' => $patternPath . 'ticks_@2X.png',
-                'tweed_@2X' => $patternPath . 'tweed_@2X.png',
-                'witewall_3_@2X' => $patternPath . 'witewall_3_@2X.png')
+            'options' => $subtlePatterns
         );
+
         $options[] = array(
             'name' => __('Favicon for site', CI_TEXT_DOMAIN),
             'desc' => __('A <a href="http://en.wikipedia.org/wiki/Favicon" target="_blank">favicon</a> is the little icon displayed in the page\'s tab. You can create one from a 16&times;16 image using the <a href="http://www.favicon.cc/" target="_blank">Favicon Generator</a>.', CI_TEXT_DOMAIN),

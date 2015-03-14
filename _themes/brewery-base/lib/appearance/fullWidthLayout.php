@@ -1,7 +1,7 @@
 <?php
 
 function ciGetContainerClass(){
-    $fullWidthContainerSpecified = of_get_option( 'full_width_container' );
+    $fullWidthContainerSpecified = get_option('full_width_container');
 
     // Override with GET parms
     if( isset($_GET['layout']) && $_GET['layout'] == "full" ) {
@@ -19,6 +19,13 @@ function ciGetContainerClass(){
     }
     if( $fullWidthContainerSpecified ) {
         $containerClass .= " pseudo-fluid";
+    }
+
+    if(get_option('navbar_fixed', false)) {
+        $containerClass .= " fixed-navbar";
+    }
+    if(get_option("full_screen_image_bg")) {
+        $containerClass .= " has-bg-img";
     }
     return $containerClass;
 }

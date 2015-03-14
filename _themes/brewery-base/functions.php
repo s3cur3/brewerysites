@@ -68,7 +68,7 @@ require_once locate_template('/lib/content/blog.php');
 // Custom excerpt function
 require_once locate_template('/lib/content/excerpt.php');
 // Color pickers
-require_once locate_template('/lib/appearance/colors.php');
+require_once locate_template('/lib/appearance/customization.php');
 // Social media icon widget
 require_once locate_template('/lib/content/sidebar/social.php');
 // Print credits for the theme

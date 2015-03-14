@@ -5,10 +5,10 @@ $additionalBodyClass = "";
 if( $showSlider ) {
     $additionalBodyClass = " has-top-slider";
 }
-if( of_get_option( 'navbar_fixed', false ) ) {
+if( get_option( 'navbar_fixed', false ) ) {
     $additionalBodyClass .= " has-fixed-navbar";
 }
-$additionalBodyClass .= of_get_option('style', CI_STYLE_CLEAN);
+$additionalBodyClass .= ' ' . get_option('style', CI_STYLE_CLEAN);
 
 
 get_template_part( 'templates/head' );
@@ -36,6 +36,17 @@ if( current_theme_supports( 'bootstrap-top-navbar' ) ) {
 if( $showSlider ) {
     $sliderCat = ciGetNormalizedMeta( 'top_img_slider_cat_string', '' );
     echo ciGetSliderHTML( $sliderCat, 10, true, CI_SIZE_LG );
+}
+
+$pushPageDownAmt = ciGetNormalizedMeta('push_page_down', 0);
+$pushFooterDownAmt = ciGetNormalizedMeta('push_footer_down', 0);
+if($pushFooterDownAmt + $pushFooterDownAmt > 0) { ?>
+    <style>
+        .wrap.container {
+            margin-top: <?php echo $pushPageDownAmt ?>px;
+            margin-bottom: <?php echo $pushFooterDownAmt ?>px;
+        }
+    </style><?php
 }
 
 ?>

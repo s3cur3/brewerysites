@@ -1,29 +1,26 @@
 <?php
 $name = get_bloginfo('name');
 $brandHTML = $name;
-$imgURL = of_get_option('firm_logo', false);
-$svgURL = of_get_option('svg_logo', false);
+$imgURL = get_option('company_logo', false);
+$svgURL = get_option('svg_logo', false);
 if( $imgURL ) {
-    $brandHTML = "<img src=\"{$imgURL}\" alt=\"{$name}\" />";
+    $width = get_option('logo_width');
+    $height = get_option('logo_height');
+    $brandHTML = "<img src=\"{$imgURL}\" width=\"{$width}\" height=\"{$height}\" alt=\"{$name}\">";
     if( $svgURL ) {
-        $width = of_get_option('svg_logo_width', '300');
-        $height = of_get_option('svg_logo_height', '37');
-        /*$brandHTML = "<svg width=\"{$width}\" height=\"{$height}\">" .
-                          "<image xlink:href=\"{$svgURL}\" src=\"{$imgURL}\" width=\"{$width}\" height=\"{$height}\" />" .
-                     "</svg>";*/
-        $brandHTML = "<img src=\"{$svgURL}\" onerror=\"this.onerror=null; this.src='{$imgURL}'\" width=\"{$width}\" height=\"{$height}\">";
+        $brandHTML = "<img src=\"{$svgURL}\" onerror=\"this.onerror=null; this.src='{$imgURL}'\" width=\"{$width}\" height=\"{$height}\" alt=\"{$name}\">";
     }
 }
 
 $navbarType = "static";
-if( of_get_option('navbar_fixed', false) ) {
+if(get_option('navbar_fixed', false)) {
     $navbarType = "fixed";
 }
 
 ?>
 <!-- HEADER-TOP-NAVBAR.PHP -->
 <header class="banner navbar navbar-default navbar-<?php echo $navbarType; ?>-top" role="banner">
-    <div class="container">
+    <div class="header-container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                 <span class="sr-only">Toggle navigation</span>
@@ -35,7 +32,7 @@ if( of_get_option('navbar_fixed', false) ) {
         </div>
 
         <nav class="collapse navbar-collapse" role="navigation"> <?php
-            $socialInNav = of_get_option('social_in_nav');
+            $socialInNav = get_option('social_in_nav');
             $socialHTML = "";
             if( $socialInNav ) {
                 $socialHTML = getSocialLinks();

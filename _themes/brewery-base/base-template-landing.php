@@ -5,7 +5,7 @@ $additionalClass = "landing-page";
 if( $showSlider ) {
     $additionalClass .= " has-top-slider";
 }
-$additionalBodyClass .= of_get_option('style', CI_STYLE_CLEAN);
+$additionalBodyClass .= get_option('style', CI_STYLE_CLEAN);
 
 get_template_part( 'templates/head' );
 

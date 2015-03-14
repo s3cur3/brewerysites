@@ -79,16 +79,21 @@ main .pad img {
     width: 100%;
   }
 }
-
+.push-down {
+  margin-top: 500px;
+}
 
 
 /* ==========================================================================
    Header
    ========================================================================== */
+.header-container {
+  padding: 0 15px;
+}
 
 .navbar-default .navbar-brand {
   color: @brand-primary;
-  font-size: 1.6em;
+  font-size: 1.5em;
   font-weight: 700;
   padding-top: 24px;
   min-height: 72px;
@@ -118,6 +123,10 @@ main .pad img {
   background: #fff;
 }
 
+.fixed-navbar {
+  margin-top: 120px;
+}
+
 
 /* ==========================================================================
    Content
@@ -143,6 +152,20 @@ button[type="submit"] {
 
 .nsu_widget {
   color: #fff;
+}
+.nsu-form {
+  label {
+    width: 25%;
+    float: left;
+    font-size: 16px;
+    margin-top: 7px;
+  }
+  input[type="email"], .nsu-field {
+    width: 75%;
+  }
+  input[type="submit"], .nsu-submit {
+    margin-left: 25%;
+  }
 }
 
 form {
@@ -315,8 +338,13 @@ div.beers {
   padding: 0;
   list-style-type: none;
 }
-.archive .beers h2 {
+.beers h2, .beers h3 {
   font-size: @font-size-h4;
+}
+.beers.per-row-5, .beers.per-row-6 {
+  h3 {
+    font-size: @font-size-base;
+  }
 }
 .widget .beers {
   img {
@@ -434,6 +462,9 @@ h1, .navbar-brand {
     padding-top: 0.3em;
     padding-bottom: 1em;
   }
+}
+.has-bg-img .sidebar {
+  background: rgba(255,255,255,0.7);
 }
 
 

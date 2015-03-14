@@ -1,14 +1,14 @@
 <?php
 $name = get_bloginfo('name');
 $brandHTML = $name;
-$imgURL = of_get_option('firm_logo', false);
+$imgURL = get_option('company_logo', false);
 if ($imgURL) {
     $brandHTML = "<img src=\"{$imgURL}\" alt=\"{$name}\" />";
 }
 ?>
 <!-- Landing page navigation -->
 <header class="banner navbar navbar-default navbar-static-top" role="banner">
-    <div class="container">
+    <div class="header-container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                 <span class="sr-only">Toggle navigation</span>

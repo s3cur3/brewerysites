@@ -67,8 +67,8 @@ function ciRegisterRequiredPlugins() {
             'required' => false,
         ),
         array(
-            'name'     => 'Testimonials by Aihrus',
-            'slug'     => 'testimonials-widget',
+            'name'     => 'Easy Bootstrap Shortcode',
+            'slug'     => 'easy-bootstrap-shortcodes',
             'required' => false,
         ),
         array(

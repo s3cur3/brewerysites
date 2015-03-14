@@ -64,6 +64,18 @@ function ciRegisterMetaBoxes( $meta_boxes ) {
                 'std'  => 1,
             ),
             array(
+                'name' => __( 'Push page down (to show off page background) this many pixels', CI_TEXT_DOMAIN ),
+                'id'   => "{$prefix}push_page_down",
+                'type' => 'text',
+                'std'  => '0',
+            ),
+            array(
+                'name' => __( 'Push footer down (to show off page background) this many pixels', CI_TEXT_DOMAIN ),
+                'id'   => "{$prefix}push_footer_down",
+                'type' => 'text',
+                'std'  => '0',
+            ),
+            array(
                 'name'     => __( 'Which sidebar should we use?', CI_TEXT_DOMAIN ),
                 'id'       => "{$prefix}sidebar",
                 'type'     => 'select',
