@@ -103,6 +103,9 @@ if( !function_exists('ciGetBeersHTML') ) {
             for( $i = 0; $i < count($beers); $i++ ) {
                 $out .= "<li class=\"{$liClass}\" itemscope itemtype=\"http://schema.org/Product\">\n";
                 $out .= getBeerInnerHTML($beers[$i], $headingLevel, "none", $noDescription, $showImages, $imageComesBeforeHeading);
+                if($beersPerRow == 1) {
+                    $out .= '<div class="clearfix"></div>';
+                }
                 $out .= "</li>\n";
             }
             $out .= "</ul>\n";
