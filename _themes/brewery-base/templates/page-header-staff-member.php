@@ -1,4 +1,4 @@
-<!-- STAFF MEMBER HEADER -->
+<!-- PAGE-HEADER-STAFF-MEMBER.PHP -->
 <?php
 $showTitle = ciGetNormalizedMeta('show_page_title', true);
 if( $showTitle ) { ?>

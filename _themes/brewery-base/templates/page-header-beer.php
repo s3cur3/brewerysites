@@ -1,8 +1,9 @@
-<!-- BEER HEADER -->
+<!-- PAGE-HEADER-BEER.PHP -->
 <?php
 $showTitle = ciGetNormalizedMeta('show_page_title', true);
 if( $showTitle ) { ?>
     <div class="page-header" itemscope itemtype="http://schema.org/IndividualProduct">
+        <?php printBreadcrumbs(); ?>
         <h1 itemprop="name"><?php
             echo roots_title();
 

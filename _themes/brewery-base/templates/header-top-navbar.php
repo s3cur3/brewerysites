@@ -21,6 +21,7 @@ if( of_get_option('navbar_fixed', false) ) {
 }
 
 ?>
+<!-- HEADER-TOP-NAVBAR.PHP -->
 <header class="banner navbar navbar-default navbar-<?php echo $navbarType; ?>-top" role="banner">
     <div class="container">
         <div class="navbar-header">

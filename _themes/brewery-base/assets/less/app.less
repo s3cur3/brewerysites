@@ -311,11 +311,18 @@ div.beers {
     margin-top: 15px;
   }
 }
+.main .beers.row ul {
+  padding: 0;
+  list-style-type: none;
+}
+.archive .beers h2 {
+  font-size: @font-size-h3;
+}
 .widget .beers {
   img {
     float: right;
     width: 50%;
-    margin-left: 10px;
+    margin: 0 0 0 10px;
   }
   ul {
     margin-left: 0;
@@ -324,6 +331,7 @@ div.beers {
   li.beer {
     list-style-type: none;
     clear: both;
+    margin-top: 15px;
     &.img-after img {
       margin-top: 0;
     }
@@ -440,6 +448,9 @@ h1, .navbar-brand {
     font-weight: bold;
     letter-spacing: 0.02em;
   }
+  h4 {
+    font-size: 1em;
+  }
 
   ul {
     padding-left: 0;
@@ -459,6 +470,13 @@ h1, .navbar-brand {
     }
   }
 }
+.ci-style-clean .widget {
+  h3 {
+    border-bottom: 1px solid #999;
+    padding-bottom: 5px;
+    font-size: 1.2em;
+  }
+}
 
 ul.social-list {
   margin-left: 0;
@@ -472,6 +490,9 @@ ul.social-list {
     content: '';
     padding: 0;
   }
+}
+.social-link {
+  font-size: 2.75em;
 }
 .individual-post ul.social-list {
   position: absolute;

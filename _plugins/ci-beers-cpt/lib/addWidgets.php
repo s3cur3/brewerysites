@@ -35,7 +35,7 @@ if(!class_exists('CiBeersWidget')) {
             echo $args['before_widget'];
             if (!empty($title))
                 echo $args['before_title'] . $title . $args['after_title'];
-            echo ciGetBeersHTML(1, $max, 3, $descLength, !$showDesc, $showImg, false);
+            echo ciGetBeersHTML(1, $max, 4, $descLength, !$showDesc, $showImg, true);
             echo $args['after_widget'];
         }
 

@@ -38,11 +38,23 @@ if( !function_exists('optionsframework_options') ) {
             'name' => __('Basics', CI_TEXT_DOMAIN),
             'type' => 'heading');
         $options[] = array(
+            'name' => __("Theme Style", CI_TEXT_DOMAIN),
+            'desc' => __("Select one of a number of site-wide visual styles", CI_TEXT_DOMAIN),
+            'id' => "style",
+            'std' => "clean",
+            'type' => "select",
+            'class' => 'mini',
+            'options' => array(
+                CI_STYLE_CLEAN => __("Clean", CI_TEXT_DOMAIN),
+                CI_STYLE_GRUNGY => __("Grunge", CI_TEXT_DOMAIN)
+            )
+        );
+        $options[] = array(
             'name' => __('', CI_TEXT_DOMAIN),
             'desc' => __('<h3>Footer options</h3>', CI_TEXT_DOMAIN),
             'type' => 'info');
         $options[] = array(
-            'name' => __('Require users to be 21 years old?', CI_TEXT_DOMAIN),
+            'name' => __('Footer columns', CI_TEXT_DOMAIN),
             'desc' => __('Each widget in the footer "sidebar" will be treated as its own column.', CI_TEXT_DOMAIN),
             'id' => 'footer_columns',
             'std' => '4',
@@ -227,6 +239,13 @@ if( !function_exists('optionsframework_options') ) {
             'type' => 'checkbox');
 
         $options[] = array(
+            'name' => __('Show sidebar on "All Beers" page?', CI_TEXT_DOMAIN),
+            'desc' => __('If checked, we\'ll display the beers in two columns with your default sidebar.', CI_TEXT_DOMAIN),
+            'id' => 'show_sidebar_on_beer_archive',
+            'std' => '0',
+            'type' => 'checkbox');
+
+        $options[] = array(
             'name' => "Color theme",
             'desc' => "By default, we use a light blue-and-charcoal color theme. You can select a different theme here. <strong>NOTE</strong>: This will not override your settings in the <a href=\"./customize.php\">basic appearance options</a>.",
             'id' => "color_theme",
@@ -316,28 +335,28 @@ if( !function_exists('optionsframework_options') ) {
 
         $options[] = array(
             'name' => __('Facebook URL', CI_TEXT_DOMAIN),
-            'desc' => __('URL for your firm\'s Facebook page. <br>(To hide the Facebook icon, leave this blank.)', CI_TEXT_DOMAIN),
+            'desc' => __('URL for your company\'s Facebook page. <br>(To hide the Facebook icon, leave this blank.)', CI_TEXT_DOMAIN),
             'id' => 'fb',
             'std' => 'http://facebook.com/',
             'type' => 'text');
 
         $options[] = array(
             'name' => __('Twitter URL', CI_TEXT_DOMAIN),
-            'desc' => __('URL for your firm\'s Twitter page. <br />(To hide the Twitter icon, leave this blank.)', CI_TEXT_DOMAIN),
+            'desc' => __('URL for your company\'s Twitter page. <br />(To hide the Twitter icon, leave this blank.)', CI_TEXT_DOMAIN),
             'id' => 'twitter',
             'std' => 'https://twitter.com/',
             'type' => 'text');
 
         $options[] = array(
             'name' => __('LinkedIn URL', CI_TEXT_DOMAIN),
-            'desc' => __('URL for your firm\'s LinkedIn page. <br />(To hide the LinkedIn icon, leave this blank.)', CI_TEXT_DOMAIN),
+            'desc' => __('URL for your company\'s LinkedIn page. <br />(To hide the LinkedIn icon, leave this blank.)', CI_TEXT_DOMAIN),
             'id' => 'linkedin',
             'std' => 'http://www.linkedin.com/in/',
             'type' => 'text');
 
         $options[] = array(
             'name' => __('Google+ URL', CI_TEXT_DOMAIN),
-            'desc' => __('URL for your firm\'s Google+ page. <br />(To hide the Google+ icon, leave this blank.)', CI_TEXT_DOMAIN),
+            'desc' => __('URL for your company\'s Google+ page. <br />(To hide the Google+ icon, leave this blank.)', CI_TEXT_DOMAIN),
             'id' => 'gplus',
             'std' => 'https://plus.google.com/',
             'type' => 'text');
@@ -350,7 +369,7 @@ if( !function_exists('optionsframework_options') ) {
             'type' => 'select',
             'options' => $test_array = array(
                     'author' => __('The site\'s primary "author"', CI_TEXT_DOMAIN),
-                    'organization' => __('Your organization', CI_TEXT_DOMAIN),
+                    'organization' => __('Your company', CI_TEXT_DOMAIN),
                     'none' => __('None', CI_TEXT_DOMAIN)
                 ));
 

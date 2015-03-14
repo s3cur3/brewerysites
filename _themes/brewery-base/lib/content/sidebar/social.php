@@ -7,7 +7,7 @@
  * @return string The individual social link
  */
 function getSocialLink( $url, $brandStr ) {
-    return "<a href=\"$url\" target=\"_blank\" class=\"social\"><i class=\"fa fa-2x fa-{$brandStr}-square\"></i></a>";
+    return "<a href=\"$url\" target=\"_blank\" class=\"social\"><i class=\"fa fa-2x fa-{$brandStr}-square social-link\"></i></a>";
 }
 
 /**

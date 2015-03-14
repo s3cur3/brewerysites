@@ -22,3 +22,6 @@ if( !defined('CI_BEER_IMG_SM') ) define("CI_BEER_IMG_SM", CI_BEER_TYPE . '-thumb
 
 if( !defined('CI_FULL_WIDTH_WITH_SIDEBAR_IMG') ) define("CI_FULL_WIDTH_WITH_SIDEBAR_IMG", "ci-full-width");
 if( !defined('CI_THUMBNAIL_IMG') ) define("CI_THUMBNAIL_IMG", "ci-thumb");
+
+if( !defined('CI_STYLE_CLEAN') ) define("CI_STYLE_CLEAN", "ci-style-clean");
+if( !defined('CI_STYLE_GRUNGY') ) define("CI_STYLE_GRUNGY", "ci-style-grungy");

@@ -8,6 +8,7 @@ if( $showSlider ) {
 if( of_get_option( 'navbar_fixed', false ) ) {
     $additionalBodyClass .= " has-fixed-navbar";
 }
+$additionalBodyClass .= of_get_option('style', CI_STYLE_CLEAN);
 
 
 get_template_part( 'templates/head' );

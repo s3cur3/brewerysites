@@ -1,3 +1,4 @@
+<!-- PAGE-HEADER.PHP -->
 <?php
 $showTitle = ciGetNormalizedMeta( 'show_page_title', true );
 if( $showTitle ) { ?>

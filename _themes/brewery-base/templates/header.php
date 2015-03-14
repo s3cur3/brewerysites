@@ -4,6 +4,7 @@
  * It is here as a fallback only.
  * =================================================*/
 ?>
+<!-- HEADER.PHP -->
 <header class="banner container" role="banner">
   <div class="row">
     <div class="col-lg-12">

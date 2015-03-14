@@ -22,7 +22,7 @@ if( !function_exists('ciGetAllBeers') ) {
                 'id' => $query->post->ID,
                 'content' => ciFilterToMaxCharLength($maybeExcerpt, $maxCharLength),
                 'fullContent' => $query->post->post_content,
-                'title' => $query->post->post_title,
+                'title' => apply_filters('the_title', $query->post->post_title),
                 'imgURL' => ($attachment ? $attachment[0] : ''),
                 'imgWidth' => ($attachment ? $attachment[1] : -1),
                 'imgHeight' => ($attachment ? $attachment[2] : -1),
