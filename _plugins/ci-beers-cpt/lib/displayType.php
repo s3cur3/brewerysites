@@ -86,32 +86,40 @@ if( !function_exists('ciGetBeersHTML') ) {
             return "";
         }
 
-        $divClass = "beers";
-        $liClass = "beer";
+        $containerClass = "beers";
+        $itemClass = "beer";
         if( $beersPerRow > 1 ) {
-            $divClass .= " row";
+            $containerClass .= " row";
             $colWidth = 12 / $beersPerRow;
-            $liClass .= " col-sm-{$colWidth}";
+            $itemClass .= " col-sm-{$colWidth}";
         }
-        $liClass .= $showImages ? " has-img" : " no-img";
-        $liClass .= $imageComesBeforeHeading ? " img-before" : " img-after";
+        $itemClass .= $showImages ? " has-img" : " no-img";
+        $itemClass .= $imageComesBeforeHeading ? " img-before" : " img-after";
 
-
-        $out = "<div class=\"{$divClass}\">";
-        if( count($beers) > 1 ) {
-            $out .= "<ul>\n";
-            for( $i = 0; $i < count($beers); $i++ ) {
-                $out .= "<li class=\"{$liClass}\" itemscope itemtype=\"http://schema.org/Product\">\n";
-                $out .= getBeerInnerHTML($beers[$i], $headingLevel, "none", $noDescription, $showImages, $imageComesBeforeHeading);
-                if($beersPerRow == 1) {
-                    $out .= '<div class="clearfix"></div>';
-                }
-                $out .= "</li>\n";
+        $out = "<div class=\"{$containerClass}\">";
+            if(count($beers) == 1) {
+                $out .= getBeerInnerHTML($beers[0], $headingLevel, "right", $noDescription, $showImages, $imageComesBeforeHeading);
             }
-            $out .= "</ul>\n";
-        } else {
-            $out .= getBeerInnerHTML($beers[0], $headingLevel, "right", $noDescription, $showImages, $imageComesBeforeHeading);
-        }
+            if($beersPerRow > 1) {
+                for($i = 0; $i < count($beers); $i++) {
+                    $out .= "<div class=\"{$itemClass}\" itemscope itemtype=\"http://schema.org/Product\">\n";
+                    $out .= getBeerInnerHTML($beers[$i], $headingLevel, "none", $noDescription, $showImages, $imageComesBeforeHeading);
+                    $out .= "\n</div>\n";
+
+                    if(($i + 1) % $beersPerRow == 0) {
+                        $out .= "<div class=\"clearfix\"></div>\n";
+                    }
+                }
+            } else {
+                $out .= "<ul>\n";
+                for($i = 0; $i < count($beers); $i++) {
+                    $out .= "<li class=\"{$itemClass}\" itemscope itemtype=\"http://schema.org/Product\">\n";
+                    $out .= getBeerInnerHTML($beers[$i], $headingLevel, "none", $noDescription, $showImages, $imageComesBeforeHeading);
+                    $out .= "\n<div class=\"clearfix\"></div>\n";
+                    $out .= "\n</li>\n";
+                }
+                $out .= "</ul>\n";
+            }
         $out .= "</div>";
         return $out;
     }

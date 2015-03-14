@@ -1,6 +1,6 @@
 <?php
 /*
-All Beers template (same as Beers archive)
+Template Name: All Beers
 */
 ?>
 <!-- TEMPLATE: ALL BEERS -->
