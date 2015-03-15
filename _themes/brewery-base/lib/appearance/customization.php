@@ -299,6 +299,46 @@ function ciCustomizeRegister($wp_customize)
 
 
 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // FANCY LANDING COLORS
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    $colors = array();
+    $colors[] =
+        array(
+            'slug' => 'fancy_landing_text_color',
+            'default' => "#333333",
+            'label' => __('Text Color', CI_TEXT_DOMAIN)
+        );
+        array(
+            'slug' => 'fancy_landing_splash_color',
+            'default' => $defaultColors['splash_color'],
+            'label' => __('Link Color', CI_TEXT_DOMAIN)
+        );
+    $colors[] =
+        array(
+            'slug' => 'fancy_landing_page_title_color',
+            'default' => $defaultColors['page_title_color'],
+            'label' => __('Page Title Color', CI_TEXT_DOMAIN)
+        );
+    $colors[] =
+        array(
+            'slug' => 'fancy_landing_heading_color',
+            'default' => $defaultColors['heading_color'],
+            'label' => __('Other Headings Color', CI_TEXT_DOMAIN)
+        );
+
+    $section = 'fancy_landing';
+    $wp_customize->add_section($section, array('title' => __('Fancy Landing Pages', CI_TEXT_DOMAIN), 'description' => __('Configure the "fancy" landing pages (available from a checkbox when editing an individual page)', CI_TEXT_DOMAIN), 'priority' => 0,));
+    foreach ($colors as $color) {
+        // SETTINGS
+        $wp_customize->add_setting($color['slug'], array('default' => $color['default'], 'type' => 'option', 'capability' => 'edit_theme_options'));
+
+        // CONTROLS
+        $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, $color['slug'], array('label' => $color['label'], 'section' => $section, 'settings' => $color['slug'])));
+    }
+
+
+
 
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -424,6 +464,12 @@ function ciPrintCustomColorStyling() {
     $h2OnSecondary = ciGetNormalizedColor('heading_on_secondary_background');
     $btn = ciGetNormalizedColor('button_color');
 
+    // Fancy landing pages
+    $fancy_landing_splash = ciGetNormalizedColor('fancy_landing_splash_color');
+    $fancy_landing_text = ciGetNormalizedColor('fancy_landing_text_color');
+    $fancy_landing_h1 = ciGetNormalizedColor('fancy_landing_page_title_color');
+    $fancy_landing_h2 = ciGetNormalizedColor('fancy_landing_heading_color');
+
     // Header stuff
     $header_text_color = ciGetNormalizedColor('header_text_color');
     $header_highlight_color = ciGetNormalizedColor('header_highlight_color');
@@ -480,11 +526,21 @@ function ciPrintCustomColorStyling() {
             <?php } ?>
         }
 
+        .fancy-landing main > p, .fancy-landing main > div, .fancy-landing main > span {
+            color: <?php echo $fancy_landing_text ?>;
+        }
+
         h1 {
             color: <?php echo $h1 ?>;
         }
         h2 {
             color: <?php echo $h2 ?>;
+        }
+        .fancy-landing h1 {
+            color: <?php echo $fancy_landing_h1 ?>;
+        }
+        .fancy-landing h2, .fancy-landing h3, .fancy-landing h4  {
+            color: <?php echo $fancy_landing_h2 ?>;
         }
         .carousel-caption h2 {
             color: #fff;
@@ -498,6 +554,13 @@ function ciPrintCustomColorStyling() {
         }
         a:hover, a:focus {
             color: <?php echo ciAdjustBrightness($splash, -30) ?>;
+        }
+
+        .fancy-landing a {
+            color: <?php echo $fancy_landing_splash; ?>;
+        }
+        .fancy-landing a:hover, .fancy-landing a:focus {
+            color: <?php echo ciAdjustBrightness($fancy_landing_splash, -30) ?>;
         }
 
         .navbar-default .navbar-brand {

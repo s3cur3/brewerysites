@@ -50,6 +50,24 @@ function ciRegisterMetaBoxes( $meta_boxes ) {
                 'std'  => 1,
             ),
             array(
+                'name' => __( 'Make this a fancy landing page?', CI_TEXT_DOMAIN ),
+                'desc' => __('If checked, your text will be put directly on top of your site-wide background (either an image or a solid color). This is a neat effect for landing pages. (Configure colors in the WP Customize screen.)', CI_TEXT_DOMAIN),
+                'id'   => "{$prefix}make_fancy_landing",
+                'type' => 'checkbox',
+                // Value can be 0 or 1
+                'std'  => 0,
+            ),
+            array(
+                'name'     => __( 'Align page text:', CI_TEXT_DOMAIN ),
+                'id'       => "{$prefix}alignment",
+                'type'     => 'select',
+                // Array of 'value' => 'Label' pairs for select box
+                'options'  => array('left' => __('Left', CI_TEXT_DOMAIN), 'center' => __('Center', CI_TEXT_DOMAIN), 'right' => __('Right', CI_TEXT_DOMAIN)),
+                // Select multiple values, optional. Default is false.
+                'multiple'    => false,
+                'std'         => 'left'
+            ),
+            array(
                 'name' => __( 'Show page sidebar?', CI_TEXT_DOMAIN ),
                 'id'   => "{$prefix}show_page_sidebar",
                 'type' => 'checkbox',
