@@ -85,6 +85,8 @@ require_once locate_template('/lib/content/footer/disclaimer.php');
 require_once locate_template('/lib/content/prettyPhoto.php');
 // Enables shortcode use in places they aren't normally allowed
 require_once locate_template('/lib/content/enableShortcodes.php');
+// Shortcodes for our "fancy" landing pages
+require_once locate_template('/lib/content/fancy-landing.php');
 // Modifies widgets as needed
 require_once locate_template('/lib/content/footer/footer-widgets.php');
 // The plugin recommender system
