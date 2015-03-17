@@ -14,7 +14,16 @@ if ( is_active_sidebar( 'sidebar-footer' ) ) { ?>
     <div class="row">
         <div class="col-lg-8">
             <?php mlfPrintDisclaimer(); ?>
-            <p>&copy; <?php echo date('Y'); ?> <?php echo do_shortcode(get_bloginfo('name')); ?> | <?php ciPrintThemeCredit(); ?></p>
+            <p><?php
+                $copyright = of_get_option('copyright', false);
+                if($copyright) {
+                    echo $copyright;
+                }
+                if(of_get_option('enable_attribution', true)) {
+                    if($copyright) echo "| ";
+                    ciPrintThemeCredit();
+                }
+            ?></p>
         </div>
     </div>
 </div>

@@ -351,6 +351,12 @@ function ciCustomizeRegister($wp_customize)
             'label' => __('Footer Columns (1-4)', CI_TEXT_DOMAIN),
             'type' => 'text'
         ),
+        array(
+            'slug' => 'copyright_text_color',
+            'default' => '#333333',
+            'label' => __('Copyright notice text color', CI_TEXT_DOMAIN),
+            'type' => 'color'
+        ),
     );
 
     $wp_customize->add_section('footer', array('title' => __('Footer', CI_TEXT_DOMAIN), 'priority' => 100,));
@@ -463,6 +469,7 @@ function ciPrintCustomColorStyling() {
     $h2 = ciGetNormalizedColor('heading_color');
     $h2OnSecondary = ciGetNormalizedColor('heading_on_secondary_background');
     $btn = ciGetNormalizedColor('button_color');
+    $copyright_text_color = ciGetNormalizedColor('copyright_text_color');
 
     // Fancy landing pages
     $fancy_landing_splash = ciGetNormalizedColor('fancy_landing_splash_color');
@@ -617,6 +624,10 @@ function ciPrintCustomColorStyling() {
 
         ul.social-list li a, .individual-post .meta a {
             color: <?php echo $secondaryBG; ?>;
+        }
+
+        .content-info, .content-info a {
+            color: <?php echo $copyright_text_color; ?>;
         }
 
         @media (max-width: 768px) {

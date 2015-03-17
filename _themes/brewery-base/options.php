@@ -332,6 +332,21 @@ if( !function_exists('optionsframework_options') ) {
             'type' => 'editor',
             'settings' => $wp_editor_settings );
 
+
+        $options[] = array(
+            'name' => __('Copyright text:', CI_TEXT_DOMAIN),
+            'desc' => __('(Appears beneath the footer text, if applicable)', CI_TEXT_DOMAIN),
+            'id' => 'copyright',
+            'std' => '&copy; ' . date('Y') . ' ' . do_shortcode(get_bloginfo('name')),
+            'type' => 'text');
+
+        $options[] = array(
+            'name' => __('Enable theme design attribution?', CI_TEXT_DOMAIN),
+            'desc' => __('If checked, enables a brief credit line for BrewSites', CI_TEXT_DOMAIN),
+            'id' => 'enable_attribution',
+            'std' => 1,
+            'type' => 'checkbox');
+
         return $options;
     }
 }
