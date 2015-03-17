@@ -302,30 +302,28 @@ function ciCustomizeRegister($wp_customize)
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // FANCY LANDING COLORS
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    $colors = array();
-    $colors[] =
+    $colors = array(
         array(
             'slug' => 'fancy_landing_text_color',
             'default' => "#333333",
             'label' => __('Text Color', CI_TEXT_DOMAIN)
-        );
+        ),
         array(
             'slug' => 'fancy_landing_splash_color',
             'default' => $defaultColors['splash_color'],
-            'label' => __('Link Color', CI_TEXT_DOMAIN)
-        );
-    $colors[] =
+            'label' => __('Highlight Color', CI_TEXT_DOMAIN)
+        ),
         array(
             'slug' => 'fancy_landing_page_title_color',
             'default' => $defaultColors['page_title_color'],
             'label' => __('Page Title Color', CI_TEXT_DOMAIN)
-        );
-    $colors[] =
+        ),
         array(
             'slug' => 'fancy_landing_heading_color',
             'default' => $defaultColors['heading_color'],
             'label' => __('Other Headings Color', CI_TEXT_DOMAIN)
-        );
+        )
+    );
 
     $section = 'fancy_landing';
     $wp_customize->add_section($section, array('title' => __('Fancy Landing Pages', CI_TEXT_DOMAIN), 'description' => __('Configure the "fancy" landing pages (available from a checkbox when editing an individual page)', CI_TEXT_DOMAIN), 'priority' => 0,));
@@ -548,6 +546,15 @@ function ciPrintCustomColorStyling() {
         }
         .fancy-landing h2, .fancy-landing h3, .fancy-landing h4  {
             color: <?php echo $fancy_landing_h2 ?>;
+        }
+        .colored-bg {
+            background: <?php echo $secondaryBG; ?>;
+        }
+        .colored-bg.highlight, .fancy-landing .beer h3 {
+            background: <?php echo $fancy_landing_splash; ?>;
+        }
+        .fancy-landing .beer h3:hover {
+            background: <?php echo ciAdjustBrightness($fancy_landing_splash, -40); ?>;
         }
         .carousel-caption h2 {
             color: #fff;

@@ -91,7 +91,15 @@ if( !function_exists('ciGetBeersHTML') ) {
         if( $beersPerRow > 1 ) {
             $containerClass .= " row per-row-{$beersPerRow}";
             $colWidth = 12 / $beersPerRow;
-            $itemClass .= " col-sm-{$colWidth}";
+            if($beersPerRow > 4) {
+                $itemClass .= " col-md-{$colWidth}";
+                $halfWidth = ceil($colWidth * 2);
+                $itemClass .= " col-sm-{$halfWidth}";
+            } else if($beersPerRow > 2) {
+                $itemClass .= " col-sm-{$colWidth}";
+            } else {
+                $itemClass .= " col-sm-{$colWidth}";
+            }
         }
         $itemClass .= $showImages ? " has-img" : " no-img";
         $itemClass .= $imageComesBeforeHeading ? " img-before" : " img-after";

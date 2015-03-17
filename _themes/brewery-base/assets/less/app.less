@@ -346,6 +346,14 @@ div.beers {
     font-size: @font-size-base;
   }
 }
+.beer {
+  img {
+    opacity: 0.9;
+    &:hover {
+      opacity: 1.0;
+    }
+  }
+}
 .widget .beers {
   img {
     float: right;
@@ -402,6 +410,41 @@ img.alignleft {
   margin-right: 12px;
 }
 
+
+
+/* ==========================================================================
+   Fancy landing pages
+   ========================================================================== */
+.colored-bg, .fancy-landing .beer h3 {
+  padding: 10px 15px;
+  background-color: #333;
+}
+.colored-bg {
+  margin: 0;
+  display: inline-block;
+}
+.fancy-landing {
+  .beer {
+    h3 {
+      margin-top: 10px;
+      a {
+        color: #fff;
+        text-decoration: none;
+      }
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+.white-container {
+  background: #fff;
+  color: #333;
+  padding: 10px 15px;
+  text-align: left;
+  max-width: 800px;
+  margin: 0 auto;
+}
 
 
 /* ==========================================================================
@@ -663,11 +706,29 @@ footer {
   font-weight: 400;
   margin: 1em auto;
 }
+.hours-line {
+  display: block;
+  &:before {
+    content: '\203A';
+    font-weight: bold;
+    color: @gray;
+    padding-right: 0.5em;
+  }
+}
 .content-info a {
   text-decoration: underline;
   &:hover {
     text-decoration: none;
   }
+}
+
+
+
+
+// Widgets on Pages
+.widgets_on_page > ul {
+  padding-left: 0;
+  list-style-type: none;
 }
 
 

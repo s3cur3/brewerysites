@@ -43,6 +43,9 @@ if( !class_exists('Roots_Vcard_Widget') ) {
         private $fields = array(
             'title'          => 'Title (optional)',
             'hours'          => 'Open Hours',
+            'hours2'          => 'Open Hours (Line 2)',
+            'hours3'          => 'Open Hours (Line 3)',
+            'hours4'          => 'Open Hours (Line 4)',
             'street_address' => 'Street Address',
             'locality'       => 'City/Locality',
             'region'         => 'State/Region',
@@ -97,9 +100,21 @@ if( !class_exists('Roots_Vcard_Widget') ) {
             } ?>
             <p class="vcard" itemscope itemtype="http://schema.org/Brewery">
                 <a class="fn org url" href="<?php echo home_url( '/' ); ?>"><span itemprop="name"><?php echo apply_filters( 'widget_text', get_bloginfo( 'name' ) ); ?></span></a><br>
-                <?php if($instance['hours']) { ?>
-                    <span>Open <?php echo apply_filters( 'widget_text', $instance['hours'] ); ?></span><br>
-                <?php } ?>
+                <?php if($instance['hours'] && !$instance['hours2'] && !$instance['hours3'] && !$instance['hours4']) { ?>
+                    <span>Open <?php echo apply_filters( 'widget_text', $instance['hours'] ); ?></span><br><?php
+                } elseif($instance['hours']) { ?>
+                    <span>Hours:</span>
+                        <span class="hours-line"><?php echo apply_filters('widget_text', $instance['hours']); ?></span><?php
+                        if($instance['hours2']) { ?>
+                            <span class="hours-line"><?php echo apply_filters('widget_text', $instance['hours2']); ?></span><?php
+                        }
+                        if($instance['hours3']) { ?>
+                            <span class="hours-line"><?php echo apply_filters('widget_text', $instance['hours3']); ?></span><?php
+                        }
+                        if($instance['hours4']) { ?>
+                            <span class="hours-line"><?php echo apply_filters('widget_text', $instance['hours4']); ?></span><?php
+                        }
+                } ?>
                   <span class="adr" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
                     <span class="street-address" itemprop="streetAddress"><?php echo apply_filters( 'widget_text', $instance['street_address'] ); ?></span><br>
                     <span class="locality" itemprop="addressLocality"><?php echo apply_filters( 'widget_text', $instance['locality'] ); ?></span>,
