@@ -54,6 +54,8 @@ require_once locate_template('/lib/content/comments.php');
 require_once locate_template('/lib/theme/relative-urls.php');
 // Sidebars and widgets
 require_once locate_template('/lib/content/sidebar/widgets.php');
+// Enable Woocommerce support
+require_once locate_template('/lib/content/integrate-woocommerce.php');
 // Variables needed by the Javascript
 require_once locate_template('/lib/header/javascriptVars.php');
 // Scripts and stylesheets

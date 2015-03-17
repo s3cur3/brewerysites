@@ -54,7 +54,7 @@ if($pushFooterDownAmt + $pushFooterDownAmt > 0) { ?>
 <div class="wrap <?php echo ciGetContainerClass(); ?>" role="document">
     <div class="content row">
         <main class="main <?php echo roots_main_class(); ?>" role="main">
-            <div class="pad">
+            <div class="pad main">
                 <?php include roots_template_path(); ?>
             </div>
         </main>
