@@ -107,8 +107,11 @@ class Options_Framework_Media_Uploader {
 
 		$menu = Options_Framework_Admin::menu_settings();
 
-		if ( 'appearance_page_' . $menu['menu_slug'] != $hook )
-	        return;
+        // TY: Changed page
+		//if ( 'appearance_page_' . $menu['menu_slug'] != $hook )
+	    //    return;
+        if ( 'toplevel_page_' . $menu['menu_slug'] != $hook )
+            return;
 
 		if ( function_exists( 'wp_enqueue_media' ) )
 			wp_enqueue_media();

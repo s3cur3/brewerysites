@@ -611,6 +611,9 @@ function ciPrintCustomColorStyling() {
                 padding-top: 20px;
                 padding-bottom: 20px;
             }
+            .post-nav {
+                padding-top: 15px;
+            }
         <?php } ?>
 
         .nsu_widget, footer, .inverted, .carousel-caption.left, .carousel-caption.right {

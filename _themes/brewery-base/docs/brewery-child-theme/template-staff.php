@@ -1,11 +1,11 @@
 <?php
 /*
-Template Name: All Attorneys (Overridden)
+Template Name: All Staff (Overridden)
 */
 
 /*================================================================
- * NOTE: This file will override the Modern Law Firm's default
- * "Attorneys" template.
+ * NOTE: This file will override the Modern Brewery's default
+ * "Staff" template.
  *
  * It doesn't do anything interesting... it's just to demonstrate
  * how you might modify a stock page template.

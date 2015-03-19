@@ -4,17 +4,15 @@ body {
     }
 </style>
 
-Documentation: The Modern Law Firm Theme
+Documentation: The Modern Brewery Theme
 =============================================
 
-- **Theme creator**: Tyler Young of [Conversion Insights][CI]
+- **Theme creator**: Tyler Young of [BrewSites][]
 - **Email**: <tyler@conversioninsights.net>
 
 Thanks for using my theme. If you have any questions that are beyond the scope of this help file, feel free to email me at <tyler@conversioninsights.net>.
 
-If you need support, customization, or help with your firm's Web marketing, [email me](mailto:tyler@conversioninsights.net) and I'll do my best to help.
-
-For help & advice on your online marketing campaigns, you can sign up for my [free course on getting more clients from your Web site](http://conversioninsights.net/get-clients-for-law-firm/?utm_source=themeDocumentation&utm_medium=web&utm_campaign=moreClients).
+If you need support, customization, or help with your brewery's Web marketing, [email me](mailto:tyler@conversioninsights.net) and I'll do my best to help.
 
 ### Table of Contents
 - [Getting Started](#gettingstarted)
@@ -60,9 +58,11 @@ After activating the theme, you'll receive a message at the top of each Admin pa
 
 ![Recommended & required plugin notification](img/install-plugins.png)
 
-Note that the theme *will not function correctly* without the required plugins.
+Note that the theme *may not function correctly* without the required plugins.
 
 Click the **Begin installing plugins** link to install these plugins. After installing the plugins, the installer will offer to **Return to Required Plugins Installer**. There, you can also activate all the plugins.
+
+(Note that both steps---installing *and* activating---are necessary.)
 
 ### Importing sample content
 **NOTE**: Before importing the sample content, it is important that you [install the recommended & required plugins](#installingrecommendedplugins). Failing to do so will cause some content *not* to be imported, making it more difficult for you to recreate the theme's demo.
@@ -429,4 +429,4 @@ Initial release
 
 [Roots]: http://roots.io/docs/ "Documentation for the Roots theme framework"
 
-[CI]: http://conversioninsights.net/?utm_source=themeDocumentation&utm_medium=web&utm_campaign=moreClients "Conversion Insights: Web Marketing for Small Law Firms"
+[BrewSites]: http://brewsites.net/?utm_source=themeDocumentation&utm_medium=web&utm_campaign=documentation "BrewSites: Web design for craft breweries, made easy"

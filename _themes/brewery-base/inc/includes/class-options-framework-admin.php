@@ -82,8 +82,8 @@ class Options_Framework_Admin {
 	static function menu_settings() {
 
 		$menu = array(
-			'page_title' => __( 'Theme Options', 'textdomain' ),
-			'menu_title' => __( 'Theme Options', 'textdomain' ),
+			'page_title' => __( 'Site Options', CI_TEXT_DOMAIN ),
+			'menu_title' => __( 'Site Options', CI_TEXT_DOMAIN ),
 			'capability' => 'edit_theme_options',
 			'menu_slug' => 'options-framework'
 		);
@@ -99,7 +99,8 @@ class Options_Framework_Admin {
 	function add_custom_options_page() {
 
 		$menu = $this->menu_settings();
-		$this->options_screen = add_theme_page( $menu['page_title'], $menu['menu_title'], $menu['capability'], $menu['menu_slug'], array( $this, 'options_page' ) );
+		//$this->options_screen = add_theme_page( $menu['page_title'], $menu['menu_title'], $menu['capability'], $menu['menu_slug'], array( $this, 'options_page' ) );
+		$this->options_screen = add_menu_page( $menu['page_title'], $menu['menu_title'], $menu['capability'], $menu['menu_slug'], array( $this, 'options_page' ), 'dashicons-admin-generic', 3 );
 
 	}
 
