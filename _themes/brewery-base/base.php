@@ -1,20 +1,19 @@
 <?php
 
 $showSlider = ciGetNormalizedMeta( 'top_img_slider', false );
-$additionalBodyClass = "";
+$additionalBodyClasses = array();
 if( $showSlider ) {
-    $additionalBodyClass = " has-top-slider";
+    $additionalBodyClasses[] = "has-top-slider";
 }
 if( get_option( 'navbar_fixed', false ) ) {
-    $additionalBodyClass .= " has-fixed-navbar";
+    $additionalBodyClasses[] = "has-fixed-navbar";
 }
-$additionalBodyClass .= ' ' . get_option('style', CI_STYLE_CLEAN);
-
+$additionalBodyClasses[] = get_option('style', CI_STYLE_CLEAN);
 
 get_template_part( 'templates/head' );
 
 ?>
-<body <?php body_class( $additionalBodyClass ); ?>>
+<body <?php body_class( $additionalBodyClasses ); ?>>
 
 <!--[if lt IE 8]>
 <div class="alert alert-warning">

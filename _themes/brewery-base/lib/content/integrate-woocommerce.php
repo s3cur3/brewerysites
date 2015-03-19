@@ -39,37 +39,5 @@ remove_action( 'woocommerce_sidebar', 				'woocommerce_get_sidebar', 					10 );
  * @see  storefront_upsell_display()
  */
 remove_action( 'woocommerce_after_single_product_summary', 	'woocommerce_upsell_display', 				15 );
-add_action( 'woocommerce_after_single_product_summary', 	'storefront_upsell_display', 				15 );
 remove_action( 'woocommerce_before_shop_loop_item_title', 	'woocommerce_show_product_loop_sale_flash', 10 );
-add_action( 'woocommerce_after_shop_loop_item_title', 		'woocommerce_show_product_loop_sale_flash', 6 );
 
-
-/**
- * Filters
- * @see  storefront_woocommerce_body_class()
- * @see  storefront_cart_link_fragment()
- * @see  storefront_thumbnail_columns()
- * @see  storefront_related_products_args()
- * @see  storefront_products_per_page()
- * @see  storefront_loop_columns()
- * @see  storefront_breadcrumb_delimeter()
- */
-add_filter( 'body_class', 								'storefront_woocommerce_body_class' );
-add_filter( 'woocommerce_product_thumbnails_columns', 	'storefront_thumbnail_columns' );
-add_filter( 'woocommerce_output_related_products_args', 'storefront_related_products_args' );
-add_filter( 'loop_shop_per_page', 						'storefront_products_per_page' );
-add_filter( 'loop_shop_columns', 						'storefront_loop_columns' );
-
-if ( defined( 'WC_VERSION' ) && version_compare( WC_VERSION, '2.3', '>=' ) ) {
-    add_filter( 'woocommerce_add_to_cart_fragments', 'storefront_cart_link_fragment' );
-} else {
-    add_filter( 'add_to_cart_fragments', 'storefront_cart_link_fragment' );
-}
-
-/**
- * Integrations
- * @see  storefront_woocommerce_integrations_scripts()
- * @see  storefront_add_bookings_customizer_css()
- */
-add_action( 'wp_enqueue_scripts', 						'storefront_woocommerce_integrations_scripts' );
-add_action( 'wp_enqueue_scripts', 						'storefront_add_integrations_customizer_css' );
