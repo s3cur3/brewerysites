@@ -60,6 +60,8 @@ require_once locate_template('/lib/content/integrate-woocommerce.php');
 require_once locate_template('/lib/header/javascriptVars.php');
 // Scripts and stylesheets
 require_once locate_template('/lib/scripts.php');
+// Misc utils for responsive designs
+require_once locate_template('/lib/content/responsive-shortcodes.php');
 
 
 /**

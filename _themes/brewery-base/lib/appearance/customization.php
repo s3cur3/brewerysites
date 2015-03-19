@@ -570,13 +570,6 @@ function ciPrintCustomColorStyling() {
             color: <?php echo ciAdjustBrightness($splash, -30) ?>;
         }
 
-        .fancy-landing a {
-            color: <?php echo $fancy_landing_splash; ?>;
-        }
-        .fancy-landing a:hover, .fancy-landing a:focus {
-            color: <?php echo ciAdjustBrightness($fancy_landing_splash, -30) ?>;
-        }
-
         .navbar-default .navbar-brand {
             color: <?php echo $firm_name; ?>;
             padding-top: <?php echo $logo_top_padding ?>px;
