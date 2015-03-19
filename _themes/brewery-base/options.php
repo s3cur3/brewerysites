@@ -55,10 +55,10 @@ if( !function_exists('optionsframework_options') ) {
         $options[] = array(
             'name' => __('Basics', CI_TEXT_DOMAIN),
             'type' => 'heading');
-        $options[] = array(
+        /*$options[] = array(
             'name' => __('', CI_TEXT_DOMAIN),
             'desc' => __('<h3>Google Analytics options</h3>', CI_TEXT_DOMAIN),
-            'type' => 'info');
+            'type' => 'info');*/
         $options[] = array(
             'name' => __('Google Analytics ID', CI_TEXT_DOMAIN),
             'desc' => __('Format: <code>UA-XXXXX-Y</code> (Note: Universal Analytics only, not Classic Analytics)', CI_TEXT_DOMAIN),
@@ -70,6 +70,13 @@ if( !function_exists('optionsframework_options') ) {
             'name' => __('', CI_TEXT_DOMAIN),
             'desc' => __('Note that Analytics tracking will <em>not</em> be active when you are logged in. (Open a different Web browser to test it.)', CI_TEXT_DOMAIN),
             'type' => 'info');
+
+        $options[] = array(
+            'name' => __('Enable ecommerce support?', CI_TEXT_DOMAIN),
+            'desc' => __('If checked, we will add support for WooCommerce (our platform for selling merchandise online)', CI_TEXT_DOMAIN),
+            'id' => 'ecommerce',
+            'std' => '0',
+            'type' => 'checkbox');
 
 
 

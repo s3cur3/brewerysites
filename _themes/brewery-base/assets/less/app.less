@@ -112,6 +112,10 @@ main .pad img {
   .social-list {
     margin-bottom: 0;
   }
+  .cart-btn {
+    float: left;
+    margin-right: 10px;
+  }
 }
 
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus {
@@ -124,13 +128,16 @@ main .pad img {
 }
 
 .fixed-navbar {
-  margin-top: 120px;
+  margin-top: 10px;
 }
 
 
 /* ==========================================================================
    Content
    ========================================================================== */
+.page-header {
+  padding-top: 50px;
+}
 
 .content { }
 
@@ -696,6 +703,7 @@ ul.colored {
 /* ==========================================================================
    WooCommerce
    ========================================================================== */
+// NOTE: .first and .last are broken on the current install... they both appear on every item!!!
 .woocommerce {
   margin: 50px 0 25px;
 
@@ -705,10 +713,59 @@ ul.colored {
     .attachment-shop_thumbnail {
       width: 33%;
     }
+    .thumbnails > a {
+      margin-right: 3.8% !important;
+      &:last-child {
+        margin-right: 0 !important;
+      }
+    }
   }
+}
+ul.products li {
+  margin-right: 2.5% !important;
+  &.first {
+    clear: none !important;
+  }
+}
+.price del {
+  display: inline !important;
 }
 .woocommerce #content div.product div.thumbnails a.last, .woocommerce div.product div.thumbnails a.last, .woocommerce-page #content div.product div.thumbnails a.last, .woocommerce-page div.product div.thumbnails a.last {
   clear: none;
+}
+.cart_totals {
+  th {
+    padding-right: 15px;
+  }
+  td {
+    padding-bottom: 10px;
+  }
+}
+.wc-proceed-to-checkout {
+  margin-top: 20px;
+}
+.coupon {
+  width: 340px;
+}
+.coupon .button, #coupon_code, .cart .actions .button {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+#coupon_code {
+  width: 160px;
+  float: left;
+}
+
+#ship-to-different-address {
+  font-family: inherit;
+  font-size: @font-size-base;
+  margin-bottom: 27px;
+  .checkbox {
+    display: inline;
+  }
+  .input-checkbox {
+    float: left;
+  }
 }
 
 
@@ -823,6 +880,12 @@ figure.alignnone { margin-left: 0; margin-right: 0; }
   /* ==========================================================================
      Content
      ========================================================================== */
+  .fixed-navbar {
+    margin-top: 120px;
+  }
+  .page-header {
+    padding-top: 0;
+  }
   .carousel-indicators {
     margin-bottom: 12px;
   }

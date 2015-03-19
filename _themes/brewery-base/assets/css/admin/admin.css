@@ -77,3 +77,9 @@ html body.wp-admin div.modal.fade {
 #optionsframework .mini .controls select, #optionsframework .section .mini .controls {
     width: 160px;
 }
+body #optionsframework .controls .of-radio-img-selected {
+    border-width: 8px;
+}
+body #optionsframework .controls .of-radio-img-selected {
+    border: 8px solid #8cf;
+}
