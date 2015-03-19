@@ -80,7 +80,7 @@ With the plugins installed and activated, you can import the sample content by d
 To set up Google Analytics tracking on all pages of the site, do the following:
 
 1. Log in to the WordPress admin menu, typically found at `yoursitehere.com/wp-admin/`
-2. Hover over Appearance in the left-hand menu, then click Theme Options.
+2. Click Site Options in the left-hand sidebar.
 3. Click the Basic tab near the top of the page.
 4. In the text box labeled Google Analytics ID, type the ID that Analytics associates with this site. It will be in the format `UA-XXXXX-Y`.
     - For help finding your Google Analytics ID, see [Google's documentation on the topic](https://support.google.com/analytics/answer/1032385?hl=en)
@@ -93,16 +93,19 @@ Creating the Home Page (A Tour of the Theme)
 
 The home page in the demo consists of a number of different elements. Understanding how these elements are created will allow you to design your own home page (and, with little exception, the rest of your site as well).
 
-![Elements of the home page](img/home-page-annotated.png)
+![](img/home-0-annotated.jpg)
+![](img/home-1-annotated.jpg)
+![Elements of the home page](img/home-2-annotated.jpg)
 
-1. Firm name/logo
-    - By default, this is a plain-text version of your site title (defined on your Settings > General page.
-    - Alternatively, you can use your own logo (an image file). Upload the image using the **Appearance (advanced)** tab of the Theme Options. Note that the recommended image size is 300&times;37px.
-2. Navigation
+1. Company name/logo
+    - By default, this is a plain-text version of your site title (defined on your Settings > General page in the WordPress administration back-end).
+    - Alternatively, you can use your own logo (an image file). Upload the image using the Theme Customizer (found by clicking Appearance > Customizer in the administration back-end). Note that the recommended image size is 360&times;50px.
+2. Navigation menu
     - Like most themes, we use the WordPress menu system for navigation menus.
     - You can set up your menus using the Appearance > Menus page.
-    - By default, the theme create a Primary Navigation menu and assign it to the Primary Navigation theme location (that is, the location at the top-right of the page).
-3. Image slider
+    - By default, the theme creates a Primary Navigation menu and assigns it to the Primary Navigation theme location (that is, the location at the top-right of the page).
+TODO: Resume here
+3. Home page content 
     - The image slider has 2 parts: the individual slides (which can be managed just like posts or pages) and the on-page code which pulls together a collection of slides into a complete slider. See the section [Image sliders](#imagesliders) below for more information.
 4. Text blocks
     - These are four standard blocks of texts, laid out using the Advanced Layout Creator <img src="img/btns/column-complex.png" /> dialog in the Wordpress editor.
