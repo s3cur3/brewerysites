@@ -104,17 +104,16 @@ The home page in the demo consists of a number of different elements. Understand
     - Like most themes, we use the WordPress menu system for navigation menus.
     - You can set up your menus using the Appearance > Menus page.
     - By default, the theme creates a Primary Navigation menu and assigns it to the Primary Navigation theme location (that is, the location at the top-right of the page).
-TODO: Resume here
 3. Home page content 
-    - The image slider has 2 parts: the individual slides (which can be managed just like posts or pages) and the on-page code which pulls together a collection of slides into a complete slider. See the section [Image sliders](#imagesliders) below for more information.
-4. Text blocks
-    - These are four standard blocks of texts, laid out using the Advanced Layout Creator <img src="img/btns/column-complex.png" /> dialog in the Wordpress editor.
-    - To insert a block of 4 columns like this, you would click the Advanced Layout Creator button <img src="img/btns/column-complex.png" />, click on Quarters, and click the button for a four quarter split. Then, when the columns appear in the editor, you can type and format your text as usual.
-5. Callout banner (colored band)
-    - Like the text blocks above, this colored band is inserted using a button above the WordPress editor (in this case, the Insert Colored Band button <img src="img/btns/coloredband.png" width="20" height="20" />). Then, you can modify the contents of that band in the WordPress editor just like normal.
-6. Call-to-action button
-    - Like the text blocks and callout banner above, the call-to-action button is inserted using a button above the text editor for the page.
-    - The Insert Call to Action Button <img src="img/btns/cta.png" style="border:1px solid #333;border-radius:4px;-webkit-border-radius:4px;" /> asks for 3 things: the text of the button, the URL that the button should take the user to when clicked, and the alignment of the button.
+    - The home page uses the "Fancy Landing Page" layout (which removes the white background from the page content to show off your full-screen image background). You can enable this by checking the box labeled **Make this a fancy landing page?** in the **Page-Specific Options** box when editing your page.
+    - The solid-colored background on the text here comes from the `[bg]` shortcode. (Read more in [the shortcode reference](#shortcodereference).)
+4. Beer list
+    - The beer list is spit out by our `[beers]` shortcode, as described in [the shortcode reference](#shortcodereference) below.
+5. Text block
+    - The `[container]` shortcode provides the white background to this block of text. (Read more in [the shortcode reference](#shortcodereference) below.)
+6. Embedded Google Map
+    - The demo site uses the [Widgets on Pages](https://wordpress.org/plugins/widgets-on-pages/) plugin to display the [Google Maps Widget](https://wordpress.org/plugins/google-maps-widget/) on the page.
+ TODO: Left off here.
 7. Attorney profiles
     - The attorney profile blocks are similar to the slider: attorney profiles (or bios) are created individually just like a normal post, and they can then be inserted onto a particular page. See the section [Attorney profiles](#attorneyprofiles) below for details.
 8. Testimonials
@@ -315,6 +314,44 @@ To insert this boilerplate, simply create a new, blank page, and insert the foll
 `[privacy /]`
 
 ...That's it!
+
+
+Shortcode Reference
+---------------------------------
+
+This theme uses a handful of [shortcodes](http://codex.wordpress.org/Shortcode) for special functionality. These are as follows:
+
+- `[bg]`---puts a solid-colored background on your text. This is primarily of use on the "[Fancy Landing Page](#creatingthehomepageatourofthetheme)."
+    - Control the margin above or below this block using the properties `mt=`[top margin, in pixels] and  `mb=`[bottom margin, in pixels], respectively. For instance:
+    
+            [bg mt=10]This paragraph has a 10-pixel top margin.[/bg]
+    - To change the background color to your fancy landing page's "highlight" color (as specified in the WordPress customizer, found in Appearance > Customize), add the `highlight` property, like this:
+
+            [bg mt=10 highlight]This paragraph has the "highlight" background color with a 10-pixel top margin.[/bg]
+- `[container]`---displays the block in a white container. This is really only useful for blocks of text on a Fancy Landing Page.
+- `[beers]`---display your Beer pages. This can be configured with a number of parameters:
+    - `columns=`[number of columns]---display the beers in columns (up to 12 columns). Defaults to 1.
+    - `number=`[max number of beers to display]---limit the number of beers shown. Defaults to 100.
+    - `length=`[max excerpt length]---limits the length of the description shown beneath the beers. A value of 0 means no description will be shown. Defaults to 250.
+    - `list`---display as a list only, with no description and no images.
+    - Example:
+    
+            [beers columns=3 number=10 length=100]
+- `[visibleatsize]`---makes the content contained within this tag only visible at a particular size (or list of sizes). Size options include `lg`, `md`, `sm`, and `xs`. For instance:
+
+        [visibleatsize lg md]
+
+        This block of content will be visible on large and medium-sized screens, but *not* on small (tablet) or extra-small (phone) screens.
+
+        [/visibleatsize]
+- `[hiddenatsize]`---the opposite of `[visibleatsize]` above, this makes the content contained within this tag *hidden* at a particular size (or list of sizes). Size options include `lg`, `md`, `sm`, and `xs`. For instance:
+
+        [hiddenatsize xs lg]
+
+        This block of content will be hidden on both extra-small and large screens.
+
+        [/hiddenatsize]
+- `[privacy]`---this spits out a boilerplate, Google-satisfying privacy policy, as described in the section [Creating a Privacy Policy](#creatingaprivacypolicy).
 
 Customizing the Theme
 ------------------------------------------------------

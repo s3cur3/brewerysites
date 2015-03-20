@@ -144,15 +144,17 @@ if( !function_exists('ciBeerHTMLShortcode') ) {
         $columns = 1; // Defined for the sake of the IDE's error-checking
         $length = 250;
         $list = false;
+        $number = 100;
         extract(
             shortcode_atts(
                 array(
                     'columns' => 1,
+                    'number'  => 100,
                     'length'  => 250,
                     'list'    => $list
                 ), ciNormalizeShortcodeAtts($atts) ), EXTR_OVERWRITE /* overwrite existing vars */ );
 
-        return ciGetBeersHTML(intval($columns), 100, 3, intval($length), $list);
+        return ciGetBeersHTML(intval($columns), $number, 3, intval($length), $list);
     }
 }
 

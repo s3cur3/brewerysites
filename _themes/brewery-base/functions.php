@@ -104,9 +104,9 @@ require_once locate_template('/lib/content/featured-image-attribution/featured-i
 //Initialize the update checker.
 require_once 'lib/theme/theme-updates/theme-update-checker.php';
 $example_update_checker = new ThemeUpdateChecker(
-    CI_SLUG,
-    'http://conversioninsights.net/downloads/themes/conversion-insights-base_version_metadata.json',
-    false
+    'brewery-base',
+    'http://cisandbox.mystagingwebsite.com/wp-content/themes/brewery-base_version_metadata.json',
+    true
 );
 
 
