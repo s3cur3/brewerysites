@@ -25,7 +25,7 @@ function ciRegisterMetaBoxes( $meta_boxes ) {
         'id' => 'standard',
 
         // Meta box title - Will appear at the drag and drop handle bar. Required.
-        'title' => __( 'Page-specific options', CI_TEXT_DOMAIN ),
+        'title' => __( 'Page-Specific Options', CI_TEXT_DOMAIN ),
 
         // Post types, accept custom post types as well - DEFAULT is array('post'). Optional.
         'pages' => array( 'post', 'page', CI_BEER_TYPE ),

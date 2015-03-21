@@ -21,7 +21,7 @@
             addBtn('columns_adv', 'Advanced layout creator', 'column-complex');
             addBtn('coloredband', 'Insert a color band', 'coloredband');
             addBtn('cta', 'Insert a call-to-action button', 'cta');
-            addBtn('attorney', 'Insert attorney profiles', 'attorney');
+            addBtn('staff', 'Insert attorney profiles', 'attorney');
             addBtn('practicearea', 'Insert practice areas', 'practicearea');
             addBtn('carousel', 'Insert an image slider', 'photo');
 

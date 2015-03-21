@@ -12,7 +12,7 @@ add_action('init', 'mlfEditorButtonHooks');
 
 
 function mlfEditorRegisterButtons( $buttons ) {
-    array_push($buttons, '|', "columns", 'columns_adv', "coloredband", 'cta', 'practicearea', 'attorney', 'carousel');
+    array_push($buttons, '|', "columns", 'columns_adv', "coloredband", 'cta', /*'practicearea', 'staff',*/ 'carousel');
     return $buttons;
 }
 

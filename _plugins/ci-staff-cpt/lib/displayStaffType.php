@@ -6,7 +6,7 @@
  * @param $maxCharLength int The maximum length of the content, in characters
  * @return array All the employee data you need. Keys are 'content', 'title', 'url', 'imgURL', 'imgWidth', and 'imgHeight'
  */
-if( !function_exists('ciGetAllBeers') ) {
+if( !function_exists('ciGetAllStaff') ) {
     function ciGetAllStaff( $maxNumEmployees = 100, $maxCharLength = -1 ) {
         $query = new WP_Query('showposts=' . $maxNumEmployees . '&post_type=' . CI_STAFF_TYPE);
 
@@ -93,12 +93,12 @@ if( !function_exists('ciGetEmployeesHTML') ) {
             $out .= "<ul>\n";
             for( $i = 0; $i < count($employees); $i++ ) {
                 $out .= "<li class=\"{$liClass}\" itemscope itemtype=\"http://schema.org/Person\">\n";
-                $out .= getBeerInnerHTML($employees[$i], $headingLevel, "none", $listOnly);
+                $out .= getEmployeeInnerHTML($employees[$i], $headingLevel, "none", $listOnly);
                 $out .= "</li>\n";
             }
             $out .= "</ul>\n";
         } else {
-            $out .= getBeerInnerHTML($employees[0], $headingLevel, "right", $listOnly);
+            $out .= getEmployeeInnerHTML($employees[0], $headingLevel, "right", $listOnly);
         }
         $out .= "</div>";
         return $out;
@@ -111,26 +111,28 @@ if( !function_exists('ciGetEmployeesHTML') ) {
  * @param $atts array containing optional 'category' field.
  * @return string The HTML that will display a slider on page
  */
-if( !function_exists('ciBeerHTMLShortcode') ) {
+if( !function_exists('ciEmployeeHTMLShortcode') ) {
     function ciEmployeeHTMLShortcode($atts) {
         $columns = 1; // Defined for the sake of the IDE's error-checking
         $length = 250;
         $list = false;
+        $number = 100;
         extract(
             shortcode_atts(
                 array(
                     'columns' => 1,
                     'length'  => 250,
+                    'number'  => $number,
                     'list'    => $list
                 ), ciNormalizeShortcodeAtts($atts) ), EXTR_OVERWRITE /* overwrite existing vars */ );
 
-        return ciGetBeersHTML(intval($columns), 100, 3, intval($length), $list);
+        return ciGetEmployeesHTML(intval($columns), $number, 3, intval($length), $list);
     }
 }
 
 if( !function_exists('ciRegisterBeerShortcode') ) {
     function ciRegisterEmployeeShortcode() {
-        add_shortcode('employees', 'ciEmployeeHTMLShortcode');
+        add_shortcode('staff', 'ciEmployeeHTMLShortcode');
     }
 }
 

@@ -37,13 +37,19 @@ if( $showSlider ) {
     echo ciGetSliderHTML( $sliderCat, 10, true, CI_SIZE_LG );
 }
 
-$pushPageDownAmt = ciGetNormalizedMeta('push_page_down', 0);
-$pushFooterDownAmt = ciGetNormalizedMeta('push_footer_down', 0);
-if($pushFooterDownAmt + $pushFooterDownAmt > 0) { ?>
+$pushPageDownAmt = intval(ciGetNormalizedMeta('push_page_down', 0));
+$pushFooterDownAmt = intval(ciGetNormalizedMeta('push_footer_down', 0));
+if($pushPageDownAmt + $pushFooterDownAmt > 0) { ?>
     <style>
         .wrap.container {
             margin-top: <?php echo $pushPageDownAmt ?>px;
             margin-bottom: <?php echo $pushFooterDownAmt ?>px;
+        }
+        .has-top-slider .wrap.container {
+            margin-top: inherit;
+        }
+        .has-top-slider .carousel.full-page {
+            margin-top: <?php echo $pushPageDownAmt ?>px;
         }
     </style><?php
 }
