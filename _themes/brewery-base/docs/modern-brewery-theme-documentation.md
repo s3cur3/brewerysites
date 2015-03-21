@@ -28,6 +28,7 @@ If you need support, customization, or help with your brewery's Web marketing, [
 - [Setting Up the Sidebar](#settingupthesidebar)
 - [Setting Up the Footer](#settingupthefooter)
 - [Setting Up the Blog](#settinguptheblog)
+- [Setting Up an Ecommerce Site](#settingupanecommercesite)
 - [Creating the Contact Page](#creatingthecontactpage)
 - [Creating Landing Pages for Ad Campaigns](#creatinglandingpagesforadcampaigns)
 - [Creating a Privacy Policy](#creatingaprivacypolicy)
@@ -305,6 +306,35 @@ To create a landing page with this theme, do the following:
 3. Select the "Landing page" template.
 4. Type your page content in the WordPress editor as usual.
 -->
+
+
+Setting Up an Ecommerce Site
+-----------------------------------------
+**Please note**: Configuring ecommerce support for your site quite a bit more complicated than simply installing the plugin. Any time you collect credit cards on your site, you are subject to  PCI Compliance standards (government-mandated standards for ensuring personal information is processed in a secure way). Unfortunately, this is *not* something that can be automatically configured by the theme. For this reason, we recommend that *only* professional Web developers configure ecommerce support. (You can always set up the theme yourself, then pay a professional a relatively small amount to set up ecommerce support.)
+
+Ecommerce support in the theme comes from the recommended "[WooCommerce](https://wordpress.org/plugins/woocommerce/)" plugin.
+
+After installing the WooCommerce plugin, check the box labeled "Enable ecommerce support" in the Site Options page's Basic tab. This will add shopping cart support to the site.
+
+Installing WooCommerce will give you two new sections in the WordPress administration back-end:
+
+- WooCommerce (where you configure payments, shipping settings, etc.), and
+- Products.
+
+The Products section gives you a way to add new products for sale. This is a WordPress "Custom Post Type," similar to the Beers, Staff, or Slides post types bundled with the theme.
+
+![An individual product page](img/product-annotated.jpg)
+
+A product page is composed of:
+
+1. The product title
+2. A Featured Image of the product
+3. (Optional:) Product Gallery images (configured right beneath the Featured Image when editing the Product's page)
+4. A short description of the product (set using the "Product Description" box when editing the Product's page)
+5. The full content of the product page
+
+For information on configuring WooCommerce, see [the WooCommerce "Getting Started guide](http://docs.woothemes.com/documentation/plugins/woocommerce/getting-started/). (Note that we can't provide support for WooCommerce-specific issue like configuring your payment providers, setting up shipping, etc. However, support is available from WooThemes, the makers of WooCommerce.)
+
 
 Creating a Privacy Policy
 ------------------------------------------------------

@@ -77,6 +77,11 @@ function ciRegisterRequiredPlugins() {
             'required' => false,
         ),
         array(
+            'name'     => 'Woocommerce',
+            'slug'     => 'woocommerce',
+            'required' => false,
+        ),
+        array(
             'name'     => 'Staff Custom Post Type Plugin', // The plugin name.
             'slug'     => 'ci-staff-cpt', // The plugin slug (typically the folder name).
             'source'   => 'http://cisandbox.mystagingwebsite.com/wp-content/plugins/ci-staff-cpt.zip', // The plugin source.
