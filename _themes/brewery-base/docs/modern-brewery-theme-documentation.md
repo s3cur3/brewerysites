@@ -7,7 +7,7 @@ body {
 Documentation: The Modern Brewery Theme
 =============================================
 
-- **Theme creator**: Tyler Young of [BrewSites][]
+- **Theme creator**: [Tyler Young][] of [BrewSites][]
 - **Email**: <tyler@conversioninsights.net>
 
 Thanks for using my theme. If you have any questions that are beyond the scope of this help file, feel free to email me at <tyler@conversioninsights.net>.
@@ -21,9 +21,9 @@ If you need support, customization, or help with your brewery's Web marketing, [
     + [Importing sample content](#importingsamplecontent)
     + [Setting up Google Analytics](#settingupgoogleanalytics)
 - [Creating the Home Page (A Tour of the Theme)](#creatingthehomepageatourofthetheme)
-    + [Image sliders](#imagesliders)
-    + [Attorney profiles](#attorneyprofiles)
-- [Notes on the Full-Width Layout](#notesonthefull-widthlayout)
+- [Image Sliders](#imagesliders)
+- [Staff Profiles](#staffprofiles)
+<!-- - [Notes on the Full-Width Layout](#notesonthefull-widthlayout) -->
 - [Configuring the Menus and Navigation](#configuringthemenusandnavigation)
 - [Setting Up the Sidebar](#settingupthesidebar)
 - [Setting Up the Footer](#settingupthefooter)
@@ -108,39 +108,40 @@ The home page in the demo consists of a number of different elements. Understand
     - The home page uses the "Fancy Landing Page" layout (which removes the white background from the page content to show off your full-screen image background). You can enable this by checking the box labeled **Make this a fancy landing page?** in the **Page-Specific Options** box when editing your page.
     - The solid-colored background on the text here comes from the `[bg]` shortcode. (Read more in [the shortcode reference](#shortcodereference).)
 4. Beer list
-    - The beer list is spit out by our `[beers]` shortcode, as described in [the shortcode reference](#shortcodereference) below.
+    - You can create Beer pages individually just like you would a normal page on the site, and those beers can be inserted onto a specific page. The beer list here is spit out by our `[beers]` shortcode, as described in [the shortcode reference](#shortcodereference) below.
 5. Text block
     - The `[container]` shortcode provides the white background to this block of text. (Read more in [the shortcode reference](#shortcodereference) below.)
 6. Embedded Google Map
     - The demo site uses the [Widgets on Pages](https://wordpress.org/plugins/widgets-on-pages/) plugin to display the [Google Maps Widget](https://wordpress.org/plugins/google-maps-widget/) on the page.
- TODO: Left off here.
-7. Attorney profiles
-    - The attorney profile blocks are similar to the slider: attorney profiles (or bios) are created individually just like a normal post, and they can then be inserted onto a particular page. See the section [Attorney profiles](#attorneyprofiles) below for details.
-8. Testimonials
-    - The testimonials seen here come courtesy of one of our recommended plugins, [Testimonials by Aihrus](http://wordpress.org/plugins/testimonials-widget/). The plugin provides the shortcode `[testimonialswidget_widget random=true]` to display all known testimonials at random.
-    - This shortcode simply placed inside a 3/4 | 1/4 split text block using the Advanced Layout Creator <img src="img/btns/column-complex.png" />, like the text blocks above. To the right is simply normal WordPress content (a bulleted list of links to other pages).
-9. Footer widgets
+7. Call-to-Action Button
+    - When editing an individual page, you can press the button ![](img/btns/cta.png) ("Insert a call-to-a button") to insert a big call-to-action button.
+8. Footer widgets
     - By default, the footer is divided into 4 columns. Content is added to the footer using the Appearance > Widgets page; simply drag and drop widgets from the left side of the screen to the **Footer** box on the right. Each widget you add will be treated as its own column.
-    - In the Theme Options page, under the **Basics** tab, you can change the number of columns that the footer is divided into. Thus, if you only have 3 widgets (blocks of content), you can tell the theme to divide the footer into 3 instead of 4.
-10. Bottom of page
-    - The very bottom of the page has 2 blocks of content: an optional disclaimer, and attribution information. You can use the **Disclaimer** tab on the Theme Options page to set your own text here. (Obviously, the area is designed to house the text of your disclaimer, but you could optionally add other content, like a link to your Terms of Use instead.)
+    - In the Site Options page (found in the WordPress administration back-end), under the **Basics** tab, you can change the number of columns that the footer is divided into. Thus, if you only have 3 widgets (blocks of content), you can tell the theme to divide the footer into 3 instead of 4.
+9. Bottom of page
+    - The very bottom of the page has 2 blocks of content: an optional plain text box, and copyright information. You can use the **Footer** tab on the Site Options page to set your own text here. This is a good place to link to things like your privacy policy or terms of service.
 
+Image Sliders
+-------------------
 
-### Image sliders
+This theme supports image sliders in two places: 
 
-As mentioned above, there are 2 steps to setting up an image slider:
+- at the top of the page (as seen on the [Sample Image Slider Page](http://cisandbox.mystagingwebsite.com/sample-image-slider-page/)), and
+- within the page (seen on the [In-Page Image Slider Page](http://cisandbox.mystagingwebsite.com/in-page-image-slider/)).
+
+There are 2 steps to setting up an image slider:
 
 1. Creating the slides themselves, and
 2. Telling a particular page to show a particular set of slides.
 
-To do 1), go to the Slides page of the WordPress Admin interface. There, you can add, delete, or modify slides. The title of the slide, along with the content of the slide's "page" will be displayed in the image slider on top of the slide's Featured Image. Thus, the Featured Image is the slide background, while the title and content are the slide content.
+To do 1), go to the Slides page of the WordPress administration back-end. There, you can add, delete, or modify slides. The title of the slide, along with the content of the slide's "page" will be displayed in the image slider on top of the slide's Featured Image. Thus, the Featured Image is the slide background, while the title and content are the slide content.
 
 Note that the recommended size for slide images depends on whether you're using the slides at the very top of the page or within it. (Slides at the very top of the page can be stretched much wider than the typical page.)
 
 - For slides used at the top of the page, the recommended size is 1920&times;657px.
 - For slides used within a page, the recommended dimensions are 1170&times;400px.
 
-(In reality, the height of the images can be whatever you want, so long as it is consistent.)
+(In reality, the height of the images can be whatever you want, so long as it is consistent---you don't want to mix image sizes within the same slider.)
 
 After slides are created, you must tell a particular page to use them. In this case, applying a Category to the slides you want to use can be very helpful---you'll be able to tell WordPress to use *only* the slides of that particular Category in your slider.
 
@@ -149,27 +150,31 @@ There are 2 ways to add a slider to a page:
 1. Insert it within the page content, or
 2. Insert it at the top of the page, above the rest of the content.
 
-You can use the Insert Image Slider button <img src="img/btns/photo.png" /> located above the page's content editor to add a slider anywhere on the page. You will be asked for the Category of the slides to use; leave this blank to show all slides, or type a category's *slug* to show only slides in that Category. (Note that the "slug" is like the URL: if you have a Category called "Attorney Stock Photos", the slug will typically be "attorney-stock-photos".)
+You can use the Insert Image Slider button (<img src="img/btns/photo.png" />) located above the page's content editor to add a slider anywhere on the page. You will be asked for the Category of the slides to use; leave this blank to show all slides, or type a category's *slug* to show only slides in that Category. (Note that the "slug" is like the URL: if you have a Category called "My Beer Photos", the slug will typically be "my-beer-photos".)
 
 Alternatively, you can add the image slider at the top of the page, below the navigation bar and above the page content. To do so, do the following:
 
 1. Edit the page as usual in the WordPress Admin interface.
-2. Scroll down to the very bottom of the editing page, to the box labeled "The Modern Law Firm theme options."
+2. Scroll down to the very bottom of the editing page, to the box labeled "Page-Specific Options."
 3. Check the box labeled "Show giant image slider at top of page."
 4. If you would like, you can type a Category's slug in the text box just below that. Or, leave the box empty to show all slides.
 5. Update or publish the page as usual.
 
-### Attorney profiles
 
-Attorney profiles in the theme are very similar to image sliders (see [the previous section](#imagesliders)). That is, you create the individual attorney profiles (using the Attorneys section of the Admin interface), then insert those attorney profiles onto a particular page using a button (in this case, the Insert Attorneys button <img src="img/btns/attorney.png" />).
+Staff Profiles
+-------------------
 
-When inserting these attorney profiles, you'll be able to choose how many columns to display them in (one attorney per column), and how much of their profile to display---that is, the maximum number of characters to show from their profile.
+Staff profiles in the theme are very similar to image sliders (see [the previous section](#imagesliders)). That is, you create the individual staff member's profiles (using the Staff section of the WordPress administration back-end), then insert those staff profiles onto a particular page [using a shortcode](#shortcodereference)---in this case, something like:
 
-There is one more place you can display the attorney profiles, though. You can use the "All Attorneys" template on a particular page. This is useful if you would like a page listing all attorneys, with links to the individual attorney's bios. Thus, in the demo site, we have created an "Attorneys" page that uses this template to list all the firm's attorneys.
+    [staff columns=4 number=4 length=0]
+
+When inserting these profiles, you'll be able to choose how many columns to display them in (one staff member per column), and how much of their profile to display---that is, the maximum number of characters to show from their profile.
+
+There is one more place you can display the staff profiles, though. You can use the "All Staff" template on a particular page. This is useful if you would like a page listing all staff members, with links to the individual staff members' pages. Thus, in the demo site, we have created an "[Our Staff](http://cisandbox.mystagingwebsite.com/our-staff/)" page that uses this template to list all the company's employees. (Note that this page is available *automatically* at `yoursitehere.com/staff/`. Using the "All Staff" template simply gives you a bit more control over the page: you can add some content above the staff profiles, for instance.)
 
 
 
-
+<!--
 Notes on the Full-Width Layout
 ------------------------------------------------------
 
@@ -191,14 +196,14 @@ To correct this, simply put your full-width text content into a custom, single-c
 2. Click the "Make columns" button <img src="img/btns/threecolumns.png" /> in the bank of editor buttons.
 3. Tell it to create a 1 column layout (type the number 1 and press enter).
 4. Replace the content that appears with your own.
-
+-->
 
 Configuring the Menus and Navigation
 ------------------------------------------------------
 
-As discussed in the previous section, this theme uses [the WordPress menu system](http://codex.wordpress.org/Appearance_Menus_SubPanel) for its navigation menus.
+As discussed previously, this theme uses [the WordPress menu system](http://codex.wordpress.org/Appearance_Menus_SubPanel) for its navigation menus.
 
-To edit the navigation menu, open the Appearance > Menus page.
+To edit the navigation menu, open the Appearance > Menus page in the WordPress administration back-end.
 
 The navigation menu in the top right of the page is taken from the "Primary Navigation" theme location. Thus, to use a menu you have created in that position, you would simply:
 
@@ -209,33 +214,31 @@ The navigation menu in the top right of the page is taken from the "Primary Navi
 By default, when you activate the theme, it will create a Primary Navigation menu and assign it to the Primary Navigation theme location (that is, the location at the top-right of the page).
 
 
-Setting up the Sidebar
+Setting Up the Sidebar
 ------------------------------------------------------
 
-The sidebar in the theme demo is made up of 5 components, each configured as "[Widgets](http://codex.wordpress.org/Appearance_Widgets_SubPanel)" on the Appearance > Widgets page. To add any of these widgets to the sidebar, simply drag them from the left side of the Widgets screen into the box labeled "Primary" (the primary sidebar).
+The sidebar in the theme demo is made up of 4 components, each configured as "[Widgets](http://codex.wordpress.org/Appearance_Widgets_SubPanel)" on the Appearance > Widgets page. To add any of these widgets to the sidebar, simply drag them from the left side of the Widgets screen into the box labeled "Primary" (the primary sidebar).
 
-![The sidebar in the theme demo](img/sidebar.png)
+![The sidebar in the theme demo](img/shop-annotated.jpg)
 
-1. Newsletter signup form
-    - The newsletter signup widget comes courtesy of the recommended plugin, [Newsletter Sign-Up](http://wordpress.org/plugins/newsletter-sign-up/). This plugin works with email sending services like MailChimp, Constant Contact, AWeber, and so on. The theme applies a custom styling to this widget to give it the dark, attention-grabbing background.
-2. Site search
+1. Site search
     - This is the standard WordPress search widget.
-3. Sidebar navigation
-    - This navigation list is inserted using the standard WordPress "Custom Menu" widget. (You'll need to create the menu you want to display using the Appearance > Menus page.)
-4. Latest blog posts
-    - This is the standard WordPress "Recent Posts" widget.
-5. Social media icons
+2. Social media icons
     - These come courtesy of this theme's "Social Media Icons" widget. To use these icons, do the following:
         1. Drag the Social Media Icons widget to your sidebar.
-        2. Visit the Appearance > Theme Options page. There, click the Social Media Links tab.
-        3. Add the URLs of your firm's social media profiles there. (To hide an icon, simply leave the URL field blank.)
+        2. Visit the Site Options page in the WordPress administration back-end. There, click the Social Media Links tab.
+        3. Add the URLs of your company's social media profiles there. (To hide an icon, simply leave the URL field blank.)
         4. Near the bottom of the menu, you can choose to either display the icons in full color or monochrome. (Note that when you hover over the monochrome icons, they gain their full color.) You can compare the two below:<br />
             ![The full-color social media icons vs. their monochrome counterparts](img/social-media.png)
+3. Most recent beers list
+    - These come from the theme's "Beers List" widget. To use it, simply drag the Beers List widget to your sidebar.
+4. Plain Text
+    - This is the standard WordPress text widget. We're using it to link to an attribution page for the various Creative Commons-licensed images we use across the site.
 
 
 [sidebar]: #settingupthesidebar "Setting Up the Sidebar"
 
-Setting up the Footer
+Setting Up the Footer
 ------------------------------------------------------
 The footer, much like [the sidebar, described above][sidebar], is made up of a number of widgets. You can add or remove widgets from the footer using the Appearance > Widgets page. Simply drag and drop widgets from the left side of the screen to the **Footer** box on the right. 
 
@@ -243,50 +246,49 @@ By default, the footer is divided into 4 columns. Each widget you add will be tr
 
 To do so, 
 
-1. Open the Appearance > Theme Options page, and click the **Basics** tab.
+1. Open the Site Options page in the WordPress administration back-end, and click the **Basics** tab.
 2. There, under the **Footer Options** heading, you can change the number of columns that the footer is divided into. Thus, if you only have 3 widgets (blocks of content), you would use 3 columns instead of 4.
 
 The footer is made up of the following elements:
 
-![Content in the page footer](img/footer.png)
+![Content in the page footer](img/footer-annotated.jpg)
 
 1. Contact information
-    - This is the "Roots: vCard" widget provided by this theme. You can use it to enter your address, phone number, and email.
+    - This is the "Contact Information (vCard)" widget provided by this theme. You can use it to enter your address, hours, phone number, and email.
 2. Google Maps
     - This is the Google Maps Widget provided by the recommended plugin, [Google Maps Widget](http://wordpress.org/plugins/google-maps-widget/).
-3. Blog posts
-    - This is the standard WordPress "Recent Posts" widget (just like [in the sidebar][sidebar]).
-4. Disclaimer text
-    - This is a simple Text widget which comes standard with WordPress.
-5. Alternate disclaimer text location
-    - Instead of placing your disclaimer in the dark-colored (attention-grabbing) region of the footer, you can place it below. You can use the **Disclaimer** tab on the Theme Options page to set your own text here. (Obviously, the area is designed to house the text of your disclaimer, but you could optionally add other content, like a link to your Terms of Use instead.)
-    - If you leave the Theme Options' Disclaimer field blank, this will be hidden.
-6. Copyright and credits
-    - This is standard text for the theme: a copyright for your firm, and a link attributing the theme design to Conversion Insights.
+3. Email signup
+    - The newsletter signup widget comes courtesy of the recommended plugin, [Newsletter Sign-Up](http://wordpress.org/plugins/newsletter-sign-up/). This plugin works with email sending services like MailChimp, Constant Contact, AWeber, and so on.
+4. Copyright and credits
+    - This is standard text for the theme: a copyright for your company, and a link attributing the theme design to Conversion Insights. You can configure both of these in the Footer tab of the Site Options page.
+5. (Not pictured:) Footer text
+    - You can use the **Footer** tab on the Site Options page to add your own text just above the copyright & credits line). (You can use this for things like a link to your Privacy Policy or Terms of Service.)
+    - If you leave the Site Options' Footer Text field blank, this will be hidden, as it is on the demo site.
+
 
 
 
 Setting Up the Blog
 ------------------------------------------------------
 
-To create a blog page (a page listing all your blog posts), do the following:
+To create a [blog page](http://cisandbox.mystagingwebsite.com/our-blog/) (a page listing all your blog posts), do the following:
 
 1. Create a new Page using the Admin's Page editor.
 2. In the "Page Attributes" box in the right-hand sidebar, find the Template field.
 3. Select the Blog template.
 4. Type any text you want to appear above the blog posts listings in the normal WordPress editor. Your most recent blog posts will appear beneath that.
-5. By default, 5 blog posts will be displayed per page. (Users can click the "Previous posts" link near the bottom of the page to see more.) To change the number of posts per page:
-    1. Visit the Theme Options page.
-    2. Click the Basics tab.
-    3. Change the "Number of blog posts to show per page" field.
-    4. Click **Save Options*** in the lower right.
+5. By default, 10 blog posts will be displayed per page. (Users can click the "Previous posts" link near the bottom of the page to see more.) To change the number of posts per page:
+    1. Visit the Settings > Reading page in the WordPress administration back-end.
+    2. Change the "Blog pages show at most" field.
+    3. Click **Save Changes*** in the lower left.
 
 Creating the Contact Page
 ------------------------------------------------------
 
-The contact page in the demo theme uses the standard page template, but it relies on the recommended plugin "[Contact Form 7](http://wordpress.org/plugins/contact-form-7/)" (or some other contact form plugin) to work. The Contact Form 7 plugin simply provides a shortcode for displaying a previously created contact form on the page.
+The [contact page](http://cisandbox.mystagingwebsite.com/contact-us/) in the demo theme uses the standard page template, but it relies on the recommended plugin "[Contact Form 7](http://wordpress.org/plugins/contact-form-7/)" (or some other contact form plugin) to work. The Contact Form 7 plugin simply provides a shortcode for displaying a previously created contact form on the page.
 
 
+<!--
 Creating Landing Pages for Ad Campaigns
 ------------------------------------------------------
 
@@ -302,7 +304,7 @@ To create a landing page with this theme, do the following:
 2. In the "Page Attributes" box in the right-hand sidebar, find the Template field.
 3. Select the "Landing page" template.
 4. Type your page content in the WordPress editor as usual.
-
+-->
 
 Creating a Privacy Policy
 ------------------------------------------------------
@@ -332,11 +334,20 @@ This theme uses a handful of [shortcodes](http://codex.wordpress.org/Shortcode) 
 - `[beers]`---display your Beer pages. This can be configured with a number of parameters:
     - `columns=`[number of columns]---display the beers in columns (up to 12 columns). Defaults to 1.
     - `number=`[max number of beers to display]---limit the number of beers shown. Defaults to 100.
-    - `length=`[max excerpt length]---limits the length of the description shown beneath the beers. A value of 0 means no description will be shown. Defaults to 250.
-    - `list`---display as a list only, with no description and no images.
+    - `length=`[max excerpt length]---limits the length (in characters) of the description shown beneath the beers. A value of 0 means no description will be shown. Defaults to 250.
+    - `list`---display as a list of names only, with no description and no images.
     - Example:
     
             [beers columns=3 number=10 length=100]
+- `[staff]`---just like `[beers]`, this displays your staff members. This can be configured with a number of parameters:
+    - `columns=`[number of columns]---display the staff in columns (up to 12 columns). Defaults to 1.
+    - `number=`[max number of staff members to display]---limit the number of staff members shown. Defaults to 100.
+    - `length=`[max excerpt length]---limits the length (in characters) of the description shown beneath the staff members. A value of 0 means no description will be shown. Defaults to 250.
+    - `list`---display as a list of names only, with no description and no images.
+    - Example:
+    
+            [staff columns=4 number=4 length=0]
+- `[slider]`---this inserts an image slider into the page. It takes one parameter: `category=`[some-category-here]. The category defines which images will appear (you might have many categories of Slides set up, allowing you to show many different combinations of images in your sliders). Note that the category you give must be the category *slug*, not the human-readable name. (The "slug" is like a URL: if you have a Category called "My Beer Photos", the slug will typically be "my-beer-photos".)
 - `[visibleatsize]`---makes the content contained within this tag only visible at a particular size (or list of sizes). Size options include `lg`, `md`, `sm`, and `xs`. For instance:
 
         [visibleatsize lg md]
@@ -362,23 +373,17 @@ By far the simplest way to customize the theme is to use the WordPress Admin int
 
 You can use the Appearance > Customize page to change things like your color scheme, your site title, and your navigation. Changing the color scheme will change the color of links, the background "highlight" color, and so on.
 
-For more advanced visual customization, go to the Appearance > Theme Options page and click on the "Appearance (advanced)" tab. There, you can:
-
-- upload a logo (to go in the top left of the page next to the navigation),
-- upload a large image to use as a full-screen background for your pages (rather than the stock flat color), or
-- select a subtle pattern as your page backgrounds (rather than the stock flat color).
-
-(Note that using a full-screen image will override any pattern settings.)
+For more advanced visual customization, go to the Site Options page in the WordPress administration back-end and click on the "Appearance (advanced)" tab.
 
 ### Using HTML & CSS
 
 If you'd like to get your hands dirty, you can edit the theme's HTML and CSS.
 
-**IMPORTANT NOTE**: Simply editing the theme's HTML (PHP) and CSS is not a great idea, because any changes you make may be overwritten when you upgrade the theme to a newer version.
+**IMPORTANT NOTE**: Simply editing the theme's HTML (PHP) and CSS is not a great idea, because any changes you make will be overwritten when you upgrade the theme to a newer version.
 
 Instead, you should [create a Child Theme](http://codex.wordpress.org/Child_Themes) and modify *that* theme. This is the *only* way to ensure your modifications will remain when the theme is upgraded.
 
-We've included a sample, very basic child theme in the `docs` directory for you to start with. See the `modern-law-child-theme` directory you find there for a very detailed guide to using your child theme.
+We've included a sample, very basic child theme in the `docs` directory for you to start with. See the `brewery-child-theme` directory you find there for a very detailed guide to using your child theme.
 
 When making modifications, here's what you need to know:
 
@@ -402,7 +407,6 @@ For instance, instead of your a typical page template looking like this:
 
 (All other markup is inherited from `base.php` and the like. More info in [the Roots documentation on the theme wrapper](http://roots.io/an-introduction-to-the-roots-theme-wrapper/).)
 
-
 Notwithstanding these atypical aspects of the theme, [the Roots documentation](http://roots.io/docs/) should get you up to speed on the changes without much trouble.
 
 #### CSS
@@ -418,7 +422,7 @@ When writing Javascript for this theme, there are two toolkits available to you:
 
 Once again, however:
 
-**Note**: Simply editing the theme's Javascript is not a great idea, because any changes you make may be overwritten when you upgrade the theme to a newer version.
+**Note**: Simply editing the theme's Javascript is not a great idea, because any changes you make will be overwritten when you upgrade the theme to a newer version.
 
 Instead, you should [create a Child Theme](http://codex.wordpress.org/Child_Themes) and modify *that* theme. This is the *only* way to ensure your modifications will remain when the theme is upgraded.
 
@@ -426,9 +430,9 @@ Instead, you should [create a Child Theme](http://codex.wordpress.org/Child_Them
 Getting Help and Support
 ------------------------------------------------------
 
-As this theme is released for free, Conversion Insights does not offer free support. However, you can contact the theme's creator, Tyler Young, at <tyler@conversioninsights.net> for support provided on an hourly basis.
+Contact [Tyler Young][] (<tyler@conversioninsights.net>) of BrewSites for support.
 
-For feature requests and bug fixes, email Tyler at <tyler@conversioninsights.net>. Once again, as this is a free theme, we can't make any promises, but we're happy to consider any requests.
+For feature requests and bug fixes, email Tyler at . Once again, as this is a free theme, we can't make any promises, but we're happy to consider any requests.
 
 For custom theme development, Web marketing services, or other consulting, email Tyler at <tyler@conversioninsights.net>.
 
@@ -442,15 +446,15 @@ Here's what's been added to the theme through updates:
 ### Version 1.1
 #### New features
 - **Custom favicon**: added the ability to upload a custom favicon. To upload a favicon (and optionally an Apple Touch Icon), do the following:
-    - Go to Appearance > Theme Options
+    - Go to the Site Options page in the WordPress administration back-end
     - Click the **Appearance (advanced)** tab
     - Scroll to the bottom.
     - Upload a 16&times;16px favicon.ico to the "Favicon for Site" field.
-- **Practice areas custom post type**: Created the Practice Areas post type
-- **Attorneys custom post type**: Added optional social media links for individual attorneys (which appear both on the individual attorney's page and on the list of all attorneys)
+- **Beers custom post type**: Created the Beers post type
+- **Staff post type**: Added optional social media links for individual staff members (which appear both on the staff member's page and on the list of all staff members)
 - **Image sliders**: Added the ability to use left- or right-aligned text in image sliders, as well as solid-colored backgrounds
 - **vCard Widget**
-    - Added Attorney Schema.org markup to the vCard widget
+    - Added Brewery Schema.org markup to the vCard widget
     - Turned phone number in vCard widget into a link (so mobile devices can click to call it)
 - **Breadcrumbs support**: added support for Yoast SEO's breadcrumbs. To use them, all you have to do is install the Yoast SEO plugin, go to its Internal Links settings, and check the box labeled "Enable breadcrumbs."
 - **Archive template**: created template for post archives
@@ -458,7 +462,7 @@ Here's what's been added to the theme through updates:
 #### Bug fixes
 - Fixed bug where Screen Options wouldn't actually appear when clicked on in the Admin menu
 
-### Version 1.01
+### Version 1.0
 Initial release
 
 
@@ -470,3 +474,6 @@ Initial release
 [Roots]: http://roots.io/docs/ "Documentation for the Roots theme framework"
 
 [BrewSites]: http://brewsites.net/?utm_source=themeDocumentation&utm_medium=web&utm_campaign=documentation "BrewSites: Web design for craft breweries, made easy"
+
+
+[Tyler Young]: http://brewsites.net/tyler-young/?utm_source=themeDocumentation&utm_medium=web&utm_campaign=documentation "Tyler Young, of BrewSites"
