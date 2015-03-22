@@ -102,6 +102,9 @@ function ciGetColorTheme() {
         'page_title_color' => $h1,
         'button_color' => $btn,
         'heading_on_secondary_background' => $h2OnSecondary,
+        'fancy_landing_splash_color' => $link,
+        'fancy_landing_text_color' => "#ffffff",
+        'fancy_landing_heading_color' => "#ffffff",
     );
 }
 
@@ -305,7 +308,7 @@ function ciCustomizeRegister($wp_customize)
     $colors = array(
         array(
             'slug' => 'fancy_landing_text_color',
-            'default' => "#333333",
+            'default' => "#ffffff",
             'label' => __('Text Color', CI_TEXT_DOMAIN)
         ),
         array(
@@ -320,7 +323,7 @@ function ciCustomizeRegister($wp_customize)
         ),
         array(
             'slug' => 'fancy_landing_heading_color',
-            'default' => $defaultColors['heading_color'],
+            'default' => "#ffffff",
             'label' => __('Other Headings Color', CI_TEXT_DOMAIN)
         )
     );

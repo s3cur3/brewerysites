@@ -73,7 +73,7 @@ if( !function_exists('ciGetEmployeesHTML') ) {
         }
 
 
-        $employees = ciGetAllBeers( $numEmployees, $maxCharLength );
+        $employees = ciGetAllStaff( $numEmployees, $maxCharLength );
 
         if( count($employees) == 0 ) {
             return "";
@@ -130,7 +130,7 @@ if( !function_exists('ciEmployeeHTMLShortcode') ) {
     }
 }
 
-if( !function_exists('ciRegisterBeerShortcode') ) {
+if( !function_exists('ciRegisterEmployeeShortcode') ) {
     function ciRegisterEmployeeShortcode() {
         add_shortcode('staff', 'ciEmployeeHTMLShortcode');
     }
