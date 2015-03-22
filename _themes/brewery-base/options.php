@@ -354,6 +354,24 @@ if( !function_exists('optionsframework_options') ) {
             'std' => 1,
             'type' => 'checkbox');
 
+
+
+
+
+        /**************************************************************
+        Footer
+         ***************************************************************/
+        $options[] = array(
+            'name' => __('Documentation', CI_TEXT_DOMAIN),
+            'type' => 'heading' );
+
+
+        $options[] = array(
+            'name' => '',
+            'desc' => '<iframe src="' . get_template_directory_uri() . '/docs/modern-brewery-theme-documentation.html" style="width:100%;height:1080px;"></iframe>',
+            'type' => 'info');
+
+
         return $options;
     }
 }
