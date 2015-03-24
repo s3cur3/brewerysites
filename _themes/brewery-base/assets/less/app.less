@@ -98,9 +98,6 @@ main .pad img {
   padding-top: 24px;
   min-height: 72px;
 }
-.navbar-brand img {
-  max-width: 100%;
-}
 
 .navbar-nav>li>a {
   padding-top: 25px;
@@ -1061,6 +1058,21 @@ figure.alignnone { margin-left: 0; margin-right: 0; }
     right: 25px;
     z-index: 1;
     padding-top: 30.5px;
+  }
+}
+@media (max-width: @screen-xs-max) {
+  .navbar-default .navbar-brand {
+    width: 83%;
+    margin-left: -15px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    min-height: 32px;
+    height: auto;
+    img {
+      max-width: 100%;
+      height: auto;
+    }
   }
 }
 
