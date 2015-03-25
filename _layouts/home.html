@@ -12,8 +12,8 @@ layout: default
 
         <div class="page-feature">
 			<div class="page-image center">
-                <img src="{{ site.url }}/images/responsive-demo.jpg" class="page-feature-image" alt="{{ page.title }}" itemprop="image" width="800">
-			</div><!-- /.page-image -->
+                {% include responsive-demo.html demo="http://cisandbox.mystagingwebsite.com/" %}
+            </div><!-- /.page-image -->
 		</div><!-- /.page-feature -->
 
         <div class="archive-wrap">
@@ -65,6 +65,7 @@ layout: default
                 Designs to choose from
                 -----------------------------------------------------------------------------------------------------------------------------------
                 {% endcomment %}
+                {% comment %}
                 <h2 class="section-break">Four designs to choose from&mdash;customized to your brewery</h2>
                 <div class="tiles">
                     <div class="tile">
@@ -85,6 +86,7 @@ layout: default
                     </div><!-- /.tile -->
                 </div>
                 <p><em>Or, contact us about creating a custom design for your brewery.</em></p>
+                {% endcomment %}
 
 
 
