@@ -6,6 +6,8 @@ buy: https://gumroad.com/l/EYIW?wanted=true
 demo: http://cisandbox.mystagingwebsite.com/
 ---
 
+## *The Modern Brewery* Theme
+
 This is our first WordPress theme for craft breweries & brewpubs.
 
 Sleek, modern, & professional, this theme is designed to get your brewery's online marketing off the ground as quickly as possible.
